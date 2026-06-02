@@ -62,13 +62,6 @@ export default function Navbar() {
         <div className="hidden md:flex items-center gap-3">
           <Link
             href="#cta"
-            className="text-sm font-medium transition-colors hover:text-white"
-            style={{ color: "#888888", fontSize: 14, fontWeight: 500 }}
-          >
-            Sign in
-          </Link>
-          <Link
-            href="#cta"
             className={cn(buttonVariants({ variant: "default" }), "text-sm font-semibold")}
             style={{
               backgroundColor: "#faff69",

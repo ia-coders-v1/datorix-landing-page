@@ -2,7 +2,7 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   output: "export",
-  basePath: "/datorix-landing-page",
+  basePath: "",
   images: { unoptimized: true },
   trailingSlash: true,
 };

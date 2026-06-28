@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Cpu, Radio, ClipboardList, ShieldCheck, Bell, Search, ArrowRight } from "lucide-react";
+import { Cpu, Radio, GitBranch, DatabaseBackup, ClipboardList, Pickaxe, ShieldCheck, FileCode2, Bell, ArrowRight } from "lucide-react";
 
 const tabs = [
   {
@@ -53,6 +53,57 @@ DEPLOYMENT passive_mode
     highlight: false,
   },
   {
+    id: "replication",
+    label: "Replication",
+    icon: GitBranch,
+    headline: "Change Data Capture across every database",
+    description:
+      "Datorix taps native transaction logs — MySQL binlog, PostgreSQL WAL, Oracle redo, SQL Server CDC — to stream every committed change in real time. Log-based capture means no triggers, no schema changes, and zero load on the source database.",
+    features: [
+      "Log-based CDC — reads MySQL binlog, Postgres WAL, Oracle redo",
+      "Real-time streaming of inserts, updates, and deletes",
+      "No triggers, no schema changes, no source-DB load",
+      "Replicate to warehouses, lakes, or standby databases",
+    ],
+    code: `-- CDC replication pipeline
+SOURCE prod_mysql
+  CAPTURE_FROM: binlog
+  POSITION:    gtid_auto
+  TABLES:      orders, payments, customers
+
+SINK analytics_warehouse
+  DELIVERY:    exactly_once
+  LATENCY:     < 1s
+  ON_SCHEMA_CHANGE: evolve`,
+    highlight: false,
+  },
+  {
+    id: "backup",
+    label: "Backup",
+    icon: DatabaseBackup,
+    headline: "Automated backup jobs for every database",
+    description:
+      "Datorix orchestrates native backup tooling — Oracle RMAN, MySQL/Postgres physical & logical dumps, SQL Server backup — on a schedule you control. Full and incremental jobs run hands-free, with verified, recoverable snapshots and point-in-time recovery.",
+    features: [
+      "Native engines — Oracle RMAN, pg_basebackup, mysqldump",
+      "Full, incremental, and differential backup jobs",
+      "Point-in-time recovery from archived logs",
+      "Automated verification and retention policies",
+    ],
+    code: `-- Backup job definition
+JOB nightly_prod_oracle
+  ENGINE:   rman
+  TYPE:     incremental_level_1
+  SCHEDULE: cron(0 2 * * *)
+  TARGET:   prod-oracle-01
+
+  RETENTION: 30_days
+  VERIFY:    restore_test = true
+  PITR:      enabled
+  ENCRYPT:   aes_256`,
+    highlight: false,
+  },
+  {
     id: "audit",
     label: "Audit Trails",
     icon: ClipboardList,
@@ -80,12 +131,39 @@ DEPLOYMENT passive_mode
     highlight: false,
   },
   {
-    id: "compliance",
-    label: "Security & Compliance",
-    icon: ShieldCheck,
-    headline: "SOX · HIPAA · GDPR · PCI-DSS built in",
+    id: "mining",
+    label: "Mining",
+    icon: Pickaxe,
+    headline: "Mine captured traffic for hidden patterns",
     description:
-      "Pre-built compliance dashboards and one-click report generation for the four major regulatory frameworks. Align with audit requirements without manual evidence collection.",
+      "Datorix mines the full stream of captured queries and audit history to surface query trends, anomalous access, unused schema objects, and previously undiscovered sensitive data — turning raw traffic into actionable insight.",
+    features: [
+      "Query-pattern and access-trend analysis",
+      "Anomaly detection across users and objects",
+      "Sensitive-data discovery (PII / PHI / PCI)",
+      "Schema-usage and dead-object insights",
+    ],
+    code: `-- Data mining job
+MINE access_patterns
+  OVER:    last_30_days
+  GROUP_BY: user, table, operation
+
+DETECT anomalies
+  BASELINE: per_user_rolling_avg
+  FLAG:     deviation > 3_sigma
+
+CLASSIFY sensitive_columns
+  MATCH:   pii, phi, pci
+  OUTPUT:  data_map + risk_score`,
+    highlight: false,
+  },
+  {
+    id: "regtech",
+    label: "RegTech",
+    icon: ShieldCheck,
+    headline: "Automated regulatory compliance — SOX · HIPAA · GDPR · PCI-DSS",
+    description:
+      "Datorix's RegTech engine continuously enforces regulatory rules and auto-generates regulator-ready evidence and filings for the major frameworks — no manual evidence collection, no audit-season scramble.",
     features: [
       "PCI-DSS Section 10 access logging",
       "HIPAA minimum-necessary access tracking",
@@ -101,6 +179,33 @@ REPORT hipaa_minimum_necessary
            failed_authentications
   FORMAT:  pdf, json, csv
   SIGN:    sha256_tamper_proof`,
+    highlight: false,
+  },
+  {
+    id: "smartcontract",
+    label: "SmartContract",
+    icon: FileCode2,
+    headline: "Policy-as-smart-contract enforcement",
+    description:
+      "Define database access and governance policies as smart contracts that auto-execute the instant a rule is breached — blocking, alerting, or quarantining with deterministic, tamper-proof enforcement and a fully versioned policy history.",
+    features: [
+      "Codify access & governance rules as contracts",
+      "Deterministic auto-execution on every violation",
+      "Block, alert, or quarantine with no human delay",
+      "Tamper-proof, versioned policy history",
+    ],
+    code: `-- Policy smart contract
+CONTRACT no_bulk_export v3
+  ON:   SELECT WHERE row_count > 10000
+  FROM: customers, payments
+
+  ENFORCE:
+    - BLOCK    query
+    - ALERT    security-team
+    - QUARANTINE session
+
+  IMMUTABLE: true
+  HASH:      sha256:7b41...`,
     highlight: false,
   },
   {
@@ -126,31 +231,6 @@ RULE block_off_hours_admin
     - sms:   +60123456789
     - slack: #db-security
   SEVERITY: CRITICAL`,
-    highlight: false,
-  },
-  {
-    id: "forensics",
-    label: "Forensics",
-    icon: Search,
-    headline: "Investigate incidents faster",
-    description:
-      "Powerful full-text search across the complete audit history lets security teams reconstruct exactly what happened, when, and by whom — in seconds, not hours.",
-    features: [
-      "Full-text search across entire audit history",
-      "Timeline reconstruction for any user or object",
-      "Cross-database incident correlation",
-      "Export evidence for legal or regulatory proceedings",
-    ],
-    code: `-- Forensic query example
-INVESTIGATE
-  USER:    admin
-  PERIOD:  2025-06-01 09:00 TO 09:30
-  FOCUS:   DDL, privilege_changes
-  INCLUDE: failed_attempts = true
-
--- Returns chronological event timeline
--- with full statement text, source IP,
--- and risk scores for each event`,
     highlight: false,
   },
 ];

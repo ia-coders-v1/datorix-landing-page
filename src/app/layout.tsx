@@ -1,6 +1,14 @@
 import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+import {
+  SITE_URL,
+  SITE_NAME,
+  SITE_TITLE,
+  SITE_DESCRIPTION,
+  TWITTER_HANDLE,
+  SITE_SAME_AS,
+} from "@/lib/site";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -17,39 +25,61 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: { default: "Datorix — Database Activity Monitoring", template: "%s | Datorix" },
-  description:
-    "Passive, agentless Database Activity Monitoring powered by Deep Packet Inspection. Complete visibility across Oracle, PostgreSQL, MySQL, SQL Server and EDB — with no performance overhead.",
+  metadataBase: new URL(SITE_URL),
+  title: { default: SITE_TITLE, template: `%s | ${SITE_NAME}` },
+  description: SITE_DESCRIPTION,
   keywords: ["database activity monitoring", "DAM", "deep packet inspection", "DPI", "data security", "SQL audit", "SOX", "HIPAA", "GDPR", "PCI-DSS"],
-  authors: [{ name: "Datorix" }],
+  authors: [{ name: SITE_NAME }],
+  alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://www.datorix.com",
-    siteName: "Datorix",
-    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Datorix — Database Activity Monitoring" }],
+    url: SITE_URL,
+    siteName: SITE_NAME,
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+    // og:image is injected automatically from app/opengraph-image.tsx
   },
-  twitter: { card: "summary_large_image", creator: "@datorix" },
+  twitter: { card: "summary_large_image", creator: TWITTER_HANDLE },
   robots: { index: true, follow: true },
-  metadataBase: new URL("https://www.datorix.com"),
 };
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  name: "Datorix",
-  applicationCategory: "SecurityApplication",
-  description:
-    "Real-time SQL firewall, bypass detection, and compliance analytics for your database fleet.",
-  offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-  url: "https://www.datorix.com",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": `${SITE_URL}/#organization`,
+      name: SITE_NAME,
+      url: SITE_URL,
+      logo: `${SITE_URL}/favicon.ico`,
+      sameAs: SITE_SAME_AS,
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${SITE_URL}/#website`,
+      name: SITE_NAME,
+      url: SITE_URL,
+      publisher: { "@id": `${SITE_URL}/#organization` },
+    },
+    {
+      "@type": "SoftwareApplication",
+      name: SITE_NAME,
+      applicationCategory: "SecurityApplication",
+      operatingSystem: "Web",
+      description:
+        "Real-time SQL firewall, bypass detection, and compliance analytics for your database fleet.",
+      offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+      url: SITE_URL,
+      publisher: { "@id": `${SITE_URL}/#organization` },
+    },
+  ],
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable} antialiased`}>
       <head>
-        <link rel="canonical" href="https://datorix.io" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

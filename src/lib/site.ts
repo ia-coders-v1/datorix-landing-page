@@ -5,7 +5,7 @@ export const SITE_URL = "https://datorix.ai"; // no trailing slash
 
 export const SITE_NAME = "Datorix";
 
-export const SITE_TITLE = "Datorix — Database Activity Monitoring";
+export const SITE_TITLE = "Datorix | Complete Data Vigilance";
 
 export const SITE_DESCRIPTION =
   "Passive, agentless Database Activity Monitoring powered by Deep Packet Inspection. Complete visibility across Oracle, PostgreSQL, MySQL, SQL Server and EDB — with no performance overhead.";

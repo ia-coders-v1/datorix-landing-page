@@ -28,6 +28,18 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: { default: SITE_TITLE, template: `%s | ${SITE_NAME}` },
   description: SITE_DESCRIPTION,
+  manifest: "/site.webmanifest",
+  icons: {
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/favicon-96x96.png", sizes: "96x96", type: "image/png" },
+      { url: "/favicon.svg", type: "image/svg+xml" },
+    ],
+    apple: [{ url: "/apple-touch-icon.png" }],
+    other: [
+      { rel: "mask-icon", url: "/favicon.svg" },
+    ],
+  },
   keywords: ["database activity monitoring", "DAM", "deep packet inspection", "DPI", "data security", "SQL audit", "SOX", "HIPAA", "GDPR", "PCI-DSS"],
   authors: [{ name: SITE_NAME }],
   alternates: { canonical: "/" },

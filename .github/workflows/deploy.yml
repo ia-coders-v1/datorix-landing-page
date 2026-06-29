@@ -1,21 +1,12 @@
-name: Deploy to GitHub Pages
+name: Deploy to cPanel
 
 on:
   push:
     branches: [main]
   workflow_dispatch:
 
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: pages
-  cancel-in-progress: true
-
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -31,19 +22,11 @@ jobs:
       - name: Build static export
         run: npm run build
 
-      - name: Add .nojekyll
-        run: touch out/.nojekyll
-
-      - uses: actions/upload-pages-artifact@v3
+      - name: Upload to cPanel via FTP
+        uses: SamKirkland/FTP-Deploy-Action@4.3.4
         with:
-          path: out
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - id: deployment
-        uses: actions/deploy-pages@v4
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./out/
+          server-dir: /public_html/

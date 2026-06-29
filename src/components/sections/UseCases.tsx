@@ -1,4 +1,5 @@
 import { ShieldCheck, ClipboardCheck, Wrench } from "lucide-react";
+import { SectionLabel } from "@/components/ui/section-label";
 
 const cases = [
   {
@@ -41,18 +42,13 @@ export default function UseCases() {
   return (
     <section
       id="use-cases"
-      style={{ backgroundColor: "#0a0a0a", paddingTop: 96, paddingBottom: 96 }}
+      style={{ backgroundColor: "#f8fafc", paddingTop: 96, paddingBottom: 96 }}
     >
       <div className="max-w-[1280px] mx-auto px-6">
-        <p
-          className="font-semibold uppercase tracking-widest mb-4 text-center"
-          style={{ color: "#888888", fontSize: 12, letterSpacing: "1.5px" }}
-        >
-          Use Cases
-        </p>
+        <SectionLabel>Use Cases</SectionLabel>
         <h2
           className="font-bold text-center mb-16"
-          style={{ fontSize: "clamp(28px, 3.5vw, 40px)", letterSpacing: "-1.5px", color: "#ffffff" }}
+          style={{ fontSize: "clamp(28px, 3.5vw, 40px)", letterSpacing: "-1.5px", color: "#0f2050" }}
         >
           Built for the teams who own the risk
         </h2>
@@ -61,22 +57,22 @@ export default function UseCases() {
           {cases.map(({ icon: Icon, persona, headline, points, featured }) => (
             <div
               key={persona}
-              className="rounded-xl p-8 flex flex-col gap-5"
+              className={`rounded-xl p-8 flex flex-col gap-5${!featured ? " card-hover" : ""}`}
               style={{
-                backgroundColor: featured ? "#faff69" : "#1a1a1a",
-                border: featured ? "none" : "1px solid #2a2a2a",
+                backgroundColor: featured ? "#0f2050" : "#ffffff",
+                border: featured ? "none" : "1px solid #e2e8f0",
               }}
             >
               <div className="flex items-center gap-2">
                 <div
                   className="w-8 h-8 rounded-full flex items-center justify-center"
-                  style={{ backgroundColor: featured ? "#0a0a0a22" : "#faff6914" }}
+                  style={{ backgroundColor: featured ? "#ffffff14" : "#38bdf814" }}
                 >
-                  <Icon size={16} style={{ color: featured ? "#0a0a0a" : "#faff69" }} />
+                  <Icon size={16} style={{ color: featured ? "#38bdf8" : "#38bdf8" }} />
                 </div>
                 <span
                   className="text-xs font-semibold uppercase tracking-widest"
-                  style={{ color: featured ? "#0a0a0a" : "#888888", letterSpacing: "1px", fontSize: 11 }}
+                  style={{ color: featured ? "#94a3b8" : "#64748b", letterSpacing: "1px", fontSize: 11 }}
                 >
                   {persona}
                 </span>
@@ -84,7 +80,7 @@ export default function UseCases() {
 
               <h3
                 className="font-bold"
-                style={{ fontSize: 20, letterSpacing: "-0.3px", color: featured ? "#0a0a0a" : "#ffffff" }}
+                style={{ fontSize: 20, letterSpacing: "-0.3px", color: featured ? "#ffffff" : "#0f2050" }}
               >
                 {headline}
               </h3>
@@ -94,11 +90,11 @@ export default function UseCases() {
                   <li
                     key={p}
                     className="text-sm leading-snug flex items-start gap-2"
-                    style={{ color: featured ? "#1a1a1a" : "#cccccc", fontSize: 14 }}
+                    style={{ color: featured ? "#94a3b8" : "#475569", fontSize: 14 }}
                   >
                     <span
                       className="mt-1.5 w-1.5 h-1.5 rounded-full shrink-0"
-                      style={{ backgroundColor: featured ? "#0a0a0a" : "#faff69" }}
+                      style={{ backgroundColor: "#38bdf8" }}
                     />
                     {p}
                   </li>

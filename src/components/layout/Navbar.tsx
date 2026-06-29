@@ -2,7 +2,8 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Shield, Menu, X } from "lucide-react";
+import Image from "next/image";
+import { Menu, X } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -27,21 +28,15 @@ export default function Navbar() {
       className="fixed top-0 left-0 right-0 z-50 transition-colors duration-200"
       style={{
         height: 64,
-        backgroundColor: scrolled ? "rgba(10,10,10,0.95)" : "#0a0a0a",
-        borderBottom: scrolled ? "1px solid #2a2a2a" : "1px solid transparent",
+        backgroundColor: scrolled ? "rgba(255,255,255,0.95)" : "#ffffff",
+        borderBottom: scrolled ? "1px solid #e2e8f0" : "1px solid transparent",
         backdropFilter: scrolled ? "blur(8px)" : "none",
       }}
     >
       <div className="max-w-[1280px] mx-auto px-6 h-full flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 shrink-0">
-          <Shield size={22} style={{ color: "#faff69" }} />
-          <span
-            className="font-bold text-base"
-            style={{ color: "#ffffff", letterSpacing: "-0.3px" }}
-          >
-            Datorix
-          </span>
+        <Link href="/" className="flex items-center shrink-0">
+          <Image src="/logo.png" alt="Datorix" height={28} width={188} style={{ display: "block" }} unoptimized />
         </Link>
 
         {/* Desktop nav */}
@@ -50,8 +45,8 @@ export default function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm font-medium transition-colors hover:text-white"
-              style={{ color: "#888888", fontSize: 14, fontWeight: 500 }}
+              className="text-sm font-medium transition-colors hover:text-[#0f2050]"
+              style={{ color: "#64748b", fontSize: 14, fontWeight: 500 }}
             >
               {link.label}
             </Link>
@@ -62,10 +57,8 @@ export default function Navbar() {
         <div className="hidden md:flex items-center gap-3">
           <Link
             href="#cta"
-            className={cn(buttonVariants({ variant: "default" }), "text-sm font-semibold")}
+            className={cn(buttonVariants({ variant: "default" }), "text-sm font-semibold bg-[#0f2050] hover:bg-[#0a1838] text-white transition-all duration-150 hover:-translate-y-0.5 hover:shadow-md active:scale-[0.98]")}
             style={{
-              backgroundColor: "#faff69",
-              color: "#0a0a0a",
               fontWeight: 600,
               fontSize: 14,
               height: 40,
@@ -84,7 +77,7 @@ export default function Navbar() {
         {/* Mobile hamburger */}
         <button
           className="md:hidden p-2"
-          style={{ color: "#ffffff" }}
+          style={{ color: "#0f2050" }}
           onClick={() => setOpen(!open)}
           aria-label="Toggle menu"
         >
@@ -96,7 +89,7 @@ export default function Navbar() {
       {open && (
         <div
           className="md:hidden px-6 pb-6 flex flex-col gap-4"
-          style={{ backgroundColor: "#0a0a0a", borderBottom: "1px solid #2a2a2a" }}
+          style={{ backgroundColor: "#ffffff", borderBottom: "1px solid #e2e8f0" }}
         >
           {navLinks.map((link) => (
             <Link
@@ -104,7 +97,7 @@ export default function Navbar() {
               href={link.href}
               onClick={() => setOpen(false)}
               className="text-sm font-medium"
-              style={{ color: "#cccccc" }}
+              style={{ color: "#475569" }}
             >
               {link.label}
             </Link>
@@ -112,10 +105,8 @@ export default function Navbar() {
           <Link
             href="#cta"
             onClick={() => setOpen(false)}
-            className="flex items-center justify-center text-sm font-semibold"
+            className="flex items-center justify-center text-sm font-semibold bg-[#0f2050] hover:bg-[#0a1838] text-white transition-all duration-150 active:scale-[0.98]"
             style={{
-              backgroundColor: "#faff69",
-              color: "#0a0a0a",
               fontWeight: 600,
               fontSize: 14,
               height: 40,

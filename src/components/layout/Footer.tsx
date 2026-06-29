@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { Shield, Mail, MapPin, X, ExternalLink } from "lucide-react";
+import Image from "next/image";
+import { Mail, MapPin, X, ExternalLink } from "lucide-react";
 
 const footerLinks = {
   Product: [
@@ -26,26 +27,23 @@ const footerLinks = {
 
 export default function Footer() {
   return (
-    <footer style={{ backgroundColor: "#0a0a0a", borderTop: "1px solid #2a2a2a", paddingTop: 64, paddingBottom: 64 }}>
+    <footer style={{ backgroundColor: "#f1f5f9", borderTop: "1px solid #e2e8f0", paddingTop: 64, paddingBottom: 64 }}>
       <div className="max-w-[1280px] mx-auto px-6">
         {/* Top row */}
         <div className="grid grid-cols-2 md:grid-cols-6 gap-10 mb-12">
           {/* Brand + contact */}
           <div className="col-span-2">
-            <div className="flex items-center gap-2 mb-4">
-              <Shield size={20} style={{ color: "#faff69" }} />
-              <span className="font-bold text-sm" style={{ color: "#ffffff", letterSpacing: "-0.3px" }}>
-                Datorix
-              </span>
+            <div className="mb-4">
+              <Image src="/logo.png" alt="Datorix" height={28} width={188} style={{ display: "block" }} unoptimized />
             </div>
-            <p className="text-sm leading-relaxed mb-4" style={{ color: "#888888", maxWidth: 220 }}>
+            <p className="text-sm leading-relaxed mb-4" style={{ color: "#64748b", maxWidth: 220 }}>
               Passive, agentless Database Activity Monitoring. Complete visibility. Total control.
             </p>
             <div className="flex flex-col gap-2">
               <a
                 href="mailto:info@datorix.com"
-                className="flex items-center gap-2 text-sm transition-colors hover:text-white"
-                style={{ color: "#888888" }}
+                className="flex items-center gap-2 text-sm transition-colors hover:text-[#0f2050]"
+                style={{ color: "#64748b" }}
               >
                 <Mail size={13} />
                 info@datorix.com
@@ -54,13 +52,13 @@ export default function Footer() {
                 href="https://www.datorix.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 text-sm transition-colors hover:text-white"
-                style={{ color: "#888888" }}
+                className="flex items-center gap-2 text-sm transition-colors hover:text-[#0f2050]"
+                style={{ color: "#64748b" }}
               >
                 <ExternalLink size={13} />
                 www.datorix.com
               </a>
-              <div className="flex items-start gap-2 text-sm" style={{ color: "#5a5a5a" }}>
+              <div className="flex items-start gap-2 text-sm" style={{ color: "#94a3b8" }}>
                 <MapPin size={13} className="mt-0.5 shrink-0" />
                 <span style={{ fontSize: 12 }}>
                   25 Lingkaran Syed Putra,<br />
@@ -76,7 +74,7 @@ export default function Footer() {
             <div key={group}>
               <p
                 className="text-xs font-semibold uppercase tracking-widest mb-4"
-                style={{ color: "#5a5a5a", letterSpacing: "1.5px" }}
+                style={{ color: "#94a3b8", letterSpacing: "1.5px" }}
               >
                 {group}
               </p>
@@ -85,8 +83,8 @@ export default function Footer() {
                   <li key={link.label}>
                     <Link
                       href={link.href}
-                      className="text-sm transition-colors hover:text-white"
-                      style={{ color: "#888888" }}
+                      className="text-sm transition-colors hover:text-[#0f2050]"
+                      style={{ color: "#64748b" }}
                     >
                       {link.label}
                     </Link>
@@ -100,16 +98,16 @@ export default function Footer() {
         {/* Bottom row */}
         <div
           className="flex flex-col md:flex-row items-center justify-between gap-4 pt-8"
-          style={{ borderTop: "1px solid #2a2a2a" }}
+          style={{ borderTop: "1px solid #e2e8f0" }}
         >
-          <p className="text-sm" style={{ color: "#5a5a5a" }}>
+          <p className="text-sm" style={{ color: "#94a3b8" }}>
             © {new Date().getFullYear()} Datorix Sdn Bhd. All rights reserved.
           </p>
           <div className="flex items-center gap-4">
-            <Link href="#" aria-label="X (Twitter)" className="transition-colors hover:text-white" style={{ color: "#5a5a5a" }}>
+            <Link href="#" aria-label="X (Twitter)" className="transition-colors hover:text-[#0f2050]" style={{ color: "#94a3b8" }}>
               <X size={18} />
             </Link>
-            <Link href="#" aria-label="Website" className="transition-colors hover:text-white" style={{ color: "#5a5a5a" }}>
+            <Link href="#" aria-label="Website" className="transition-colors hover:text-[#0f2050]" style={{ color: "#94a3b8" }}>
               <ExternalLink size={18} />
             </Link>
           </div>

@@ -1,3 +1,5 @@
+import { SectionLabel } from "@/components/ui/section-label";
+
 const steps = [
   {
     number: "01",
@@ -41,67 +43,60 @@ export default function HowItWorks() {
     <section
       id="how-it-works"
       style={{
-        backgroundColor: "#1a1a1a",
+        backgroundColor: "#f1f5f9",
         paddingTop: 96,
         paddingBottom: 96,
-        borderTop: "1px solid #2a2a2a",
-        borderBottom: "1px solid #2a2a2a",
+        borderTop: "1px solid #e2e8f0",
+        borderBottom: "1px solid #e2e8f0",
       }}
     >
       <div className="max-w-[1280px] mx-auto px-6">
-        <p
-          className="font-semibold uppercase tracking-widest mb-4 text-center"
-          style={{ color: "#888888", fontSize: 12, letterSpacing: "1.5px" }}
-        >
-          How It Works
-        </p>
+        <SectionLabel>How It Works</SectionLabel>
         <h2
           className="font-bold text-center mb-16"
-          style={{ fontSize: "clamp(28px, 3.5vw, 40px)", letterSpacing: "-1.5px", color: "#ffffff" }}
+          style={{ fontSize: "clamp(28px, 3.5vw, 40px)", letterSpacing: "-1.5px", color: "#0f2050" }}
         >
           From packet to compliance report
           <br />
-          <span style={{ color: "#faff69" }}>in five steps.</span>
+          <span style={{ color: "#38bdf8" }}>in five steps.</span>
         </h2>
 
-        {/* Desktop: 5-column grid. Mobile: stacked */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
           {steps.map((step, i) => (
             <div key={step.number} className="relative flex flex-col gap-4">
               <div
-                className="rounded-xl p-6 flex flex-col gap-3 h-full"
-                style={{ backgroundColor: "#242424", border: "1px solid #2a2a2a" }}
+                className="rounded-xl p-6 flex flex-col gap-3 h-full card-hover"
+                style={{ backgroundColor: "#ffffff", border: "1px solid #e2e8f0" }}
               >
                 <div
                   className="w-9 h-9 rounded-full flex items-center justify-center font-bold"
-                  style={{ backgroundColor: "#faff69", color: "#0a0a0a", fontSize: 12, fontWeight: 700 }}
+                  style={{ backgroundColor: "#38bdf8", color: "#ffffff", fontSize: 12, fontWeight: 700 }}
                 >
                   {step.number}
                 </div>
 
-                <h3 className="font-bold" style={{ fontSize: 18, letterSpacing: "-0.3px", color: "#ffffff" }}>
+                <h3 className="font-bold" style={{ fontSize: 18, letterSpacing: "-0.3px", color: "#0f2050" }}>
                   {step.title}
                 </h3>
 
-                <p className="text-sm leading-relaxed flex-1" style={{ color: "#cccccc", fontSize: 13 }}>
+                <p className="text-sm leading-relaxed flex-1" style={{ color: "#475569", fontSize: 13 }}>
                   {step.description}
                 </p>
 
                 <p
                   className="text-xs"
-                  style={{ color: "#5a5a5a", fontFamily: "var(--font-jetbrains-mono)" }}
+                  style={{ color: "#94a3b8", fontFamily: "var(--font-jetbrains-mono)" }}
                 >
                   {step.detail}
                 </p>
               </div>
 
-              {/* Arrow connector — desktop only, between cards */}
               {i < steps.length - 1 && (
                 <div
                   className="hidden lg:flex absolute top-10 -right-3 z-10 items-center justify-center w-6 h-6 rounded-full"
-                  style={{ backgroundColor: "#0a0a0a", border: "1px solid #2a2a2a" }}
+                  style={{ backgroundColor: "#f8fafc", border: "1px solid #e2e8f0" }}
                 >
-                  <span style={{ color: "#faff69", fontSize: 10 }}>›</span>
+                  <span style={{ color: "#38bdf8", fontSize: 10 }}>›</span>
                 </div>
               )}
             </div>

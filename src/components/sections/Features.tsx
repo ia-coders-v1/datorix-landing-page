@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Cpu, Radio, GitBranch, DatabaseBackup, ClipboardList, Pickaxe, ShieldCheck, FileCode2, Bell, ArrowRight } from "lucide-react";
+import { SectionLabel } from "@/components/ui/section-label";
 
 const tabs = [
   {
@@ -240,17 +241,12 @@ export default function Features() {
   const tab = tabs.find((t) => t.id === active)!;
 
   return (
-    <section id="features" style={{ backgroundColor: "#0a0a0a", paddingTop: 96, paddingBottom: 96 }}>
+    <section id="features" style={{ backgroundColor: "#f8fafc", paddingTop: 96, paddingBottom: 96 }}>
       <div className="max-w-[1280px] mx-auto px-6">
-        <p
-          className="font-semibold uppercase tracking-widest mb-4 text-center"
-          style={{ color: "#888888", fontSize: 12, letterSpacing: "1.5px" }}
-        >
-          Features
-        </p>
+        <SectionLabel>Features</SectionLabel>
         <h2
           className="font-bold text-center mb-12"
-          style={{ fontSize: "clamp(28px, 3.5vw, 40px)", letterSpacing: "-1.5px", color: "#ffffff" }}
+          style={{ fontSize: "clamp(28px, 3.5vw, 40px)", letterSpacing: "-1.5px", color: "#0f2050" }}
         >
           Complete visibility across all
           <br />
@@ -266,17 +262,16 @@ export default function Features() {
               <button
                 key={t.id}
                 onClick={() => setActive(t.id)}
-                className="flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-colors"
+                className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-150 ${isActive ? "bg-white" : "hover:bg-[#f1f5f9]"}`}
                 style={{
-                  backgroundColor: isActive ? "#1a1a1a" : "transparent",
-                  color: isActive ? "#ffffff" : "#888888",
-                  border: isActive ? "1px solid #2a2a2a" : "1px solid transparent",
+                  color: isActive ? "#0f2050" : "#64748b",
+                  border: isActive ? "1px solid #e2e8f0" : "1px solid transparent",
                   fontSize: 14,
                   fontWeight: 500,
                   cursor: "pointer",
                 }}
               >
-                <Icon size={15} style={{ color: isActive ? "#faff69" : "#5a5a5a" }} />
+                <Icon size={15} style={{ color: isActive ? "#38bdf8" : "#94a3b8" }} />
                 {t.label}
               </button>
             );
@@ -287,53 +282,53 @@ export default function Features() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {/* Info card */}
           <div
-            className="rounded-xl p-8 flex flex-col gap-5"
+            className={`rounded-xl p-8 flex flex-col gap-5${!tab.highlight ? " card-hover" : ""}`}
             style={{
-              backgroundColor: tab.highlight ? "#faff69" : "#1a1a1a",
-              border: tab.highlight ? "none" : "1px solid #2a2a2a",
+              backgroundColor: tab.highlight ? "#0f2050" : "#ffffff",
+              border: tab.highlight ? "none" : "1px solid #e2e8f0",
             }}
           >
             <h3
               className="font-bold"
-              style={{ fontSize: 24, letterSpacing: "-0.5px", color: tab.highlight ? "#0a0a0a" : "#ffffff" }}
+              style={{ fontSize: 24, letterSpacing: "-0.5px", color: tab.highlight ? "#ffffff" : "#0f2050" }}
             >
               {tab.headline}
             </h3>
             <p
               className="text-sm leading-relaxed"
-              style={{ color: tab.highlight ? "#1a1a1a" : "#cccccc", fontSize: 15 }}
+              style={{ color: tab.highlight ? "#94a3b8" : "#475569", fontSize: 15 }}
             >
               {tab.description}
             </p>
             <ul className="flex flex-col gap-2 mt-2">
               {tab.features.map((f) => (
-                <li key={f} className="flex items-center gap-2 text-sm" style={{ color: tab.highlight ? "#0a0a0a" : "#cccccc" }}>
-                  <ArrowRight size={14} style={{ color: tab.highlight ? "#0a0a0a" : "#faff69", flexShrink: 0 }} />
+                <li key={f} className="flex items-center gap-2 text-sm" style={{ color: tab.highlight ? "#cbd5e1" : "#475569" }}>
+                  <ArrowRight size={14} style={{ color: tab.highlight ? "#ffffff" : "#38bdf8", flexShrink: 0 }} />
                   {f}
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Code window */}
+          {/* Code window — stays dark for terminal aesthetic */}
           <div
             className="rounded-xl overflow-hidden border"
-            style={{ backgroundColor: "#1a1a1a", borderColor: "#2a2a2a" }}
+            style={{ backgroundColor: "#1e293b", borderColor: "#334155" }}
           >
             <div
               className="px-4 py-3 border-b flex items-center gap-2"
-              style={{ backgroundColor: "#242424", borderColor: "#2a2a2a" }}
+              style={{ backgroundColor: "#334155", borderColor: "#475569" }}
             >
               <span className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: "#ef4444" }} />
               <span className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: "#f59e0b" }} />
               <span className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: "#22c55e" }} />
-              <span className="ml-2 text-xs" style={{ color: "#5a5a5a", fontFamily: "var(--font-jetbrains-mono)" }}>
+              <span className="ml-2 text-xs" style={{ color: "#64748b", fontFamily: "var(--font-jetbrains-mono)" }}>
                 {tab.id}.conf
               </span>
             </div>
             <pre
               className="p-6 text-xs leading-relaxed overflow-x-auto"
-              style={{ fontFamily: "var(--font-jetbrains-mono)", color: "#cccccc", whiteSpace: "pre-wrap", wordBreak: "break-word" }}
+              style={{ fontFamily: "var(--font-jetbrains-mono)", color: "#94a3b8", whiteSpace: "pre-wrap", wordBreak: "break-word" }}
             >
               {tab.code}
             </pre>

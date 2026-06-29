@@ -1,4 +1,5 @@
 import { Eye, AlertTriangle, Ghost } from "lucide-react";
+import { SectionLabel } from "@/components/ui/section-label";
 
 const problems = [
   {
@@ -23,40 +24,35 @@ const problems = [
 
 export default function Problem() {
   return (
-    <section id="problem" style={{ backgroundColor: "#121212", paddingTop: 96, paddingBottom: 96 }}>
+    <section id="problem" style={{ backgroundColor: "#f8fafc", paddingTop: 96, paddingBottom: 96 }}>
       <div className="max-w-[1280px] mx-auto px-6">
-        <p
-          className="font-semibold uppercase tracking-widest mb-4 text-center"
-          style={{ color: "#888888", fontSize: 12, letterSpacing: "1.5px" }}
-        >
-          The Problem
-        </p>
+        <SectionLabel>The Problem</SectionLabel>
         <h2
           className="font-bold text-center mb-16"
-          style={{ fontSize: "clamp(28px, 3.5vw, 40px)", letterSpacing: "-1.5px", color: "#ffffff" }}
+          style={{ fontSize: "clamp(28px, 3.5vw, 40px)", letterSpacing: "-1.5px", color: "#0f2050" }}
         >
           Your database is your biggest
           <br />
-          <span style={{ color: "#faff69" }}>unmonitored attack surface.</span>
+          <span style={{ color: "#38bdf8" }}>unmonitored attack surface.</span>
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {problems.map(({ icon: Icon, title, body }) => (
             <div
               key={title}
-              className="rounded-xl p-8 flex flex-col gap-4"
-              style={{ backgroundColor: "#1a1a1a", border: "1px solid #2a2a2a" }}
+              className="rounded-xl p-8 flex flex-col gap-4 card-hover"
+              style={{ backgroundColor: "#ffffff", border: "1px solid #e2e8f0" }}
             >
               <div
                 className="w-10 h-10 rounded-lg flex items-center justify-center"
-                style={{ backgroundColor: "#faff6914" }}
+                style={{ backgroundColor: "#38bdf814" }}
               >
-                <Icon size={20} style={{ color: "#faff69" }} />
+                <Icon size={20} style={{ color: "#38bdf8" }} />
               </div>
-              <h3 className="font-bold" style={{ fontSize: 18, letterSpacing: "-0.3px", color: "#ffffff" }}>
+              <h3 className="font-bold" style={{ fontSize: 18, letterSpacing: "-0.3px", color: "#0f2050" }}>
                 {title}
               </h3>
-              <p className="text-sm leading-relaxed" style={{ color: "#888888", fontSize: 15 }}>
+              <p className="text-sm leading-relaxed" style={{ color: "#64748b", fontSize: 15 }}>
                 {body}
               </p>
             </div>

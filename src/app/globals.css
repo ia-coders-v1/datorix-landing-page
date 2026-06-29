@@ -31,53 +31,63 @@
 
 :root {
   /* Brand */
-  --primary:           #faff69;
-  --primary-active:    #e6eb52;
-  --primary-disabled:  #3a3a1f;
-  --primary-foreground: #0a0a0a;
+  --primary:           #0f2050;
+  --primary-active:    #0a1838;
+  --primary-disabled:  #cbd5e1;
+  --primary-foreground: #ffffff;
 
   /* Surfaces */
-  --background:        #0a0a0a;
-  --foreground:        #ffffff;
-  --canvas:            #0a0a0a;
-  --surface-soft:      #121212;
-  --surface-card:      #1a1a1a;
-  --surface-elevated:  #242424;
-  --hairline:          #2a2a2a;
-  --hairline-strong:   #3a3a3a;
+  --background:        #f8fafc;
+  --foreground:        #0f2050;
+  --canvas:            #f8fafc;
+  --surface-soft:      #f1f5f9;
+  --surface-card:      #ffffff;
+  --surface-elevated:  #ffffff;
+  --hairline:          #e2e8f0;
+  --hairline-strong:   #cbd5e1;
 
   /* shadcn mappings */
-  --card:              #1a1a1a;
-  --card-foreground:   #ffffff;
-  --popover:           #1a1a1a;
-  --popover-foreground: #ffffff;
-  --secondary:         #1a1a1a;
-  --secondary-foreground: #ffffff;
-  --muted:             #1a1a1a;
-  --muted-foreground:  #888888;
-  --accent:            #1a1a1a;
-  --accent-foreground: #ffffff;
+  --card:              #ffffff;
+  --card-foreground:   #0f2050;
+  --popover:           #ffffff;
+  --popover-foreground: #0f2050;
+  --secondary:         #f1f5f9;
+  --secondary-foreground: #0f2050;
+  --muted:             #f1f5f9;
+  --muted-foreground:  #64748b;
+  --accent:            #f1f5f9;
+  --accent-foreground: #0f2050;
   --destructive:       #ef4444;
-  --border:            #2a2a2a;
-  --input:             #2a2a2a;
-  --ring:              #faff69;
+  --border:            #e2e8f0;
+  --input:             #e2e8f0;
+  --ring:              #38bdf8;
 
   /* Text */
-  --on-dark:           #ffffff;
-  --body:              #cccccc;
-  --body-strong:       #e6e6e6;
-  --muted-text:        #888888;
-  --muted-soft:        #5a5a5a;
+  --on-dark:           #0f2050;
+  --body:              #475569;
+  --body-strong:       #1e293b;
+  --muted-text:        #64748b;
+  --muted-soft:        #94a3b8;
 
   /* Semantic */
   --accent-emerald:    #22c55e;
   --accent-rose:       #ef4444;
-  --accent-blue:       #3b82f6;
+  --accent-blue:       #38bdf8;
 
   /* Spacing */
   --spacing-section:   96px;
 
   --radius: 0.75rem;
+}
+
+@layer utilities {
+  .card-hover {
+    transition: transform 200ms ease, box-shadow 200ms ease;
+  }
+  .card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(15, 32, 80, 0.09);
+  }
 }
 
 @layer base {

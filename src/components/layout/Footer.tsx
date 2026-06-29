@@ -41,22 +41,22 @@ export default function Footer() {
             </p>
             <div className="flex flex-col gap-2">
               <a
-                href="mailto:info@datorix.com"
+                href="mailto:info@datorix.ai"
                 className="flex items-center gap-2 text-sm transition-colors hover:text-[#0f2050]"
                 style={{ color: "#64748b" }}
               >
                 <Mail size={13} />
-                info@datorix.com
+                info@datorix.ai
               </a>
               <a
-                href="https://www.datorix.com"
+                href="https://www.datorix.ai"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-sm transition-colors hover:text-[#0f2050]"
                 style={{ color: "#64748b" }}
               >
                 <ExternalLink size={13} />
-                www.datorix.com
+                www.datorix.ai
               </a>
               <div className="flex items-start gap-2 text-sm" style={{ color: "#94a3b8" }}>
                 <MapPin size={13} className="mt-0.5 shrink-0" />

@@ -2,14 +2,16 @@ import Link from "next/link";
 import Image from "next/image";
 import { Mail, MapPin, X, ExternalLink } from "lucide-react";
 
-const footerLinks = {
+type FooterLink = { label: string; href: string; download?: boolean };
+
+const footerLinks: Record<string, FooterLink[]> = {
   Product: [
     { label: "Features", href: "#features" },
     { label: "How It Works", href: "#how-it-works" },
     { label: "Use Cases", href: "#use-cases" },
   ],
   Resources: [
-    { label: "Documentation", href: "#" },
+    { label: "Datasheet (PDF)", href: "/docs/datorix_enterprise_datasheet_DAM.pdf", download: true },
     { label: "API Reference", href: "#" },
     { label: "Changelog", href: "#" },
   ],
@@ -85,6 +87,9 @@ export default function Footer() {
                       href={link.href}
                       className="text-sm transition-colors hover:text-[#0f2050]"
                       style={{ color: "#64748b" }}
+                      {...(link.download
+                        ? { download: true, target: "_blank", rel: "noopener noreferrer" }
+                        : {})}
                     >
                       {link.label}
                     </Link>

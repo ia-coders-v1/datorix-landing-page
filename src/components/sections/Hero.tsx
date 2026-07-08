@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { ArrowRight, Terminal } from "lucide-react";
+import { ArrowRight, Download, Terminal } from "lucide-react";
 
 const SQL_LINES = [
   { time: "09:14:32.001", user: "app_user",   query: "SELECT * FROM customers WHERE region = 'MY'" },
@@ -152,6 +152,27 @@ export default function Hero() {
                 }}
               >
                 See How It Works
+              </Link>
+              <Link
+                href="/docs/datorix_enterprise_datasheet_DAM.pdf"
+                download
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 font-semibold transition-all duration-150 hover:-translate-y-0.5 active:scale-[0.98]"
+                style={{
+                  backgroundColor: "transparent",
+                  color: "#0f2050",
+                  fontWeight: 600,
+                  fontSize: 14,
+                  height: 44,
+                  paddingLeft: 12,
+                  paddingRight: 12,
+                  borderRadius: 8,
+                  textDecoration: "none",
+                }}
+              >
+                <Download size={16} />
+                Download Datasheet
               </Link>
             </div>
 

@@ -16,32 +16,18 @@ export default function CallToAction() {
   };
 
   return (
-    <section id="cta" style={{ backgroundColor: "#f8fafc", paddingTop: 96, paddingBottom: 96 }}>
+    <section id="cta" className="bg-background pt-24 pb-24">
       <div className="max-w-[1280px] mx-auto px-6">
-        <div
-          className="rounded-xl px-8 py-16 text-center flex flex-col items-center gap-6"
-          style={{ backgroundColor: "#0f2050" }}
-        >
-          <p
-            className="font-semibold uppercase tracking-widest"
-            style={{ color: "#94a3b8", fontSize: 12, letterSpacing: "1.5px" }}
-          >
+        <div className="rounded-xl px-8 py-16 text-center flex flex-col items-center gap-6 bg-primary">
+          <p className="font-semibold uppercase tracking-[1.5px] text-xs text-muted-soft">
             Get Started
           </p>
 
-          <h2
-            className="font-bold"
-            style={{
-              fontSize: "clamp(28px, 3.5vw, 40px)",
-              letterSpacing: "-1.5px",
-              color: "#ffffff",
-              maxWidth: 560,
-            }}
-          >
+          <h2 className="font-bold text-[clamp(28px,3.5vw,40px)] tracking-[-1.5px] text-white max-w-[560px]">
             Start monitoring your database in minutes.
           </h2>
 
-          <p className="text-base" style={{ color: "#94a3b8", maxWidth: 440 }}>
+          <p className="text-base text-muted-soft max-w-[440px]">
             No agents. No schema changes. Deploy Guardian Proxy or Watcher Sniffer and see your first query log in under 5 minutes.
           </p>
 
@@ -53,43 +39,23 @@ export default function CallToAction() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
-                className="flex-1"
-                style={{
-                  backgroundColor: "#1e293b",
-                  border: "1px solid #1e293b",
-                  color: "#ffffff",
-                  height: 44,
-                  borderRadius: 8,
-                  fontSize: 14,
-                }}
+                className="flex-1 h-11 rounded-md text-sm bg-slate-800 border border-slate-800 text-white"
               />
               <Button
                 type="submit"
-                className="flex items-center gap-2 shrink-0 font-semibold bg-[#38bdf8] hover:bg-[#0ea5e9] text-[#0f2050] transition-all duration-150 hover:-translate-y-0.5 hover:shadow-md active:scale-[0.98]"
-                style={{
-                  fontWeight: 600,
-                  fontSize: 14,
-                  height: 44,
-                  paddingLeft: 24,
-                  paddingRight: 24,
-                  borderRadius: 8,
-                  border: "none",
-                }}
+                className="flex items-center gap-2 shrink-0 font-semibold h-11 px-6 rounded-md border-0 text-sm bg-accent-blue hover:bg-sky-500 text-primary transition-all duration-150 hover:-translate-y-0.5 hover:shadow-md active:scale-[0.98]"
               >
                 Get Early Access
                 <ArrowRight size={15} />
               </Button>
             </form>
           ) : (
-            <div
-              className="px-6 py-3 rounded-lg text-sm font-medium"
-              style={{ backgroundColor: "#1e293b", color: "#38bdf8" }}
-            >
+            <div className="px-6 py-3 rounded-lg text-sm font-medium bg-slate-800 text-accent-blue">
               You&apos;re on the list. We&apos;ll be in touch soon.
             </div>
           )}
 
-          <p className="text-xs" style={{ color: "#64748b" }}>
+          <p className="text-xs text-muted-foreground">
             No credit card required. Free during beta.
           </p>
         </div>

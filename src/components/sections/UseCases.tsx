@@ -1,5 +1,6 @@
 import { ShieldCheck, ClipboardCheck, Wrench } from "lucide-react";
 import { SectionLabel } from "@/components/ui/section-label";
+import { cn } from "@/lib/utils";
 
 const cases = [
   {
@@ -40,16 +41,10 @@ const cases = [
 
 export default function UseCases() {
   return (
-    <section
-      id="use-cases"
-      style={{ backgroundColor: "#f8fafc", paddingTop: 96, paddingBottom: 96 }}
-    >
+    <section id="use-cases" className="bg-background pt-24 pb-24">
       <div className="max-w-[1280px] mx-auto px-6">
         <SectionLabel>Use Cases</SectionLabel>
-        <h2
-          className="font-bold text-center mb-16"
-          style={{ fontSize: "clamp(28px, 3.5vw, 40px)", letterSpacing: "-1.5px", color: "#0f2050" }}
-        >
+        <h2 className="font-bold text-center mb-16 text-[clamp(28px,3.5vw,40px)] tracking-[-1.5px] text-primary">
           Built for the teams who own the risk
         </h2>
 
@@ -57,31 +52,31 @@ export default function UseCases() {
           {cases.map(({ icon: Icon, persona, headline, points, featured }) => (
             <div
               key={persona}
-              className={`rounded-xl p-8 flex flex-col gap-5${!featured ? " card-hover" : ""}`}
-              style={{
-                backgroundColor: featured ? "#0f2050" : "#ffffff",
-                border: featured ? "none" : "1px solid #e2e8f0",
-              }}
+              className={cn(
+                "rounded-xl p-8 flex flex-col gap-5",
+                featured ? "bg-primary border-none" : "bg-white border border-border card-hover"
+              )}
             >
               <div className="flex items-center gap-2">
                 <div
-                  className="w-8 h-8 rounded-full flex items-center justify-center"
-                  style={{ backgroundColor: featured ? "#ffffff14" : "#38bdf814" }}
+                  className={cn(
+                    "w-8 h-8 rounded-full flex items-center justify-center",
+                    featured ? "bg-white/8" : "bg-accent-blue/8"
+                  )}
                 >
-                  <Icon size={16} style={{ color: featured ? "#38bdf8" : "#38bdf8" }} />
+                  <Icon size={16} className="text-accent-blue" />
                 </div>
                 <span
-                  className="text-xs font-semibold uppercase tracking-widest"
-                  style={{ color: featured ? "#94a3b8" : "#64748b", letterSpacing: "1px", fontSize: 11 }}
+                  className={cn(
+                    "text-[11px] font-semibold uppercase tracking-[1px]",
+                    featured ? "text-muted-soft" : "text-muted-foreground"
+                  )}
                 >
                   {persona}
                 </span>
               </div>
 
-              <h3
-                className="font-bold"
-                style={{ fontSize: 20, letterSpacing: "-0.3px", color: featured ? "#ffffff" : "#0f2050" }}
-              >
+              <h3 className={cn("font-bold text-xl tracking-[-0.3px]", featured ? "text-white" : "text-primary")}>
                 {headline}
               </h3>
 
@@ -89,13 +84,12 @@ export default function UseCases() {
                 {points.map((p) => (
                   <li
                     key={p}
-                    className="text-sm leading-snug flex items-start gap-2"
-                    style={{ color: featured ? "#94a3b8" : "#475569", fontSize: 14 }}
+                    className={cn(
+                      "text-sm leading-snug flex items-start gap-2",
+                      featured ? "text-muted-soft" : "text-body"
+                    )}
                   >
-                    <span
-                      className="mt-1.5 w-1.5 h-1.5 rounded-full shrink-0"
-                      style={{ backgroundColor: "#38bdf8" }}
-                    />
+                    <span className="mt-1.5 w-1.5 h-1.5 rounded-full shrink-0 bg-accent-blue" />
                     {p}
                   </li>
                 ))}

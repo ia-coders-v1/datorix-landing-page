@@ -10,7 +10,7 @@ const databases = [
 
 export default function Databases() {
   return (
-    <section style={{ backgroundColor: "#f1f5f9", paddingTop: 64, paddingBottom: 64, borderTop: "1px solid #e2e8f0", borderBottom: "1px solid #e2e8f0" }}>
+    <section className="bg-secondary pt-16 pb-16 border-t border-b border-border">
       <div className="max-w-[1280px] mx-auto px-6 flex flex-col items-center gap-8">
         <SectionLabel>Works with your existing database stack</SectionLabel>
 
@@ -18,13 +18,12 @@ export default function Databases() {
           {databases.map(({ name, detail }) => (
             <div
               key={name}
-              className="flex flex-col items-center gap-1 px-5 py-3 rounded-xl card-hover"
-              style={{ backgroundColor: "#ffffff", border: "1px solid #e2e8f0" }}
+              className="flex flex-col items-center gap-1 px-5 py-3 rounded-xl card-hover bg-white border border-border"
             >
-              <span className="font-semibold text-sm" style={{ color: "#0f2050", fontSize: 14 }}>
+              <span className="font-semibold text-sm text-primary">
                 {name}
               </span>
-              <span style={{ color: "#94a3b8", fontSize: 11, fontFamily: "var(--font-jetbrains-mono)" }}>
+              <span className="text-[11px] font-mono text-muted-soft">
                 {detail}
               </span>
             </div>

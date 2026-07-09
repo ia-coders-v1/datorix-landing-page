@@ -43,11 +43,11 @@ function Counter({ value, suffix, label, decimal }: typeof stats[0]) {
 
   return (
     <div ref={ref} className="flex flex-col gap-2 text-center">
-      <p className="font-bold leading-none" style={{ fontSize: 56, color: "#0f2050", letterSpacing: "-1.5px" }}>
+      <p className="font-bold leading-none text-[56px] text-primary tracking-[-1.5px]">
         {decimal ? current.toFixed(2) : current}
         {suffix}
       </p>
-      <p className="text-sm" style={{ color: "#64748b" }}>
+      <p className="text-sm text-muted-foreground">
         {label}
       </p>
     </div>
@@ -56,16 +56,13 @@ function Counter({ value, suffix, label, decimal }: typeof stats[0]) {
 
 export default function Stats() {
   return (
-    <section style={{ backgroundColor: "#f1f5f9", paddingTop: 96, paddingBottom: 96, borderTop: "1px solid #e2e8f0", borderBottom: "1px solid #e2e8f0" }}>
+    <section className="bg-secondary pt-24 pb-24 border-t border-b border-border">
       <div className="max-w-[1280px] mx-auto px-6">
         <SectionLabel>By the Numbers</SectionLabel>
-        <h2
-          className="font-bold text-center mb-16"
-          style={{ fontSize: "clamp(28px, 3.5vw, 40px)", letterSpacing: "-1.5px", color: "#0f2050" }}
-        >
+        <h2 className="font-bold text-center mb-16 text-[clamp(28px,3.5vw,40px)] tracking-[-1.5px] text-primary">
           Built for production-grade
           <br />
-          <span style={{ color: "#38bdf8" }}>database environments</span>
+          <span className="text-accent-blue">database environments</span>
         </h2>
 
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-10">

@@ -40,63 +40,39 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <section
-      id="how-it-works"
-      style={{
-        backgroundColor: "#f1f5f9",
-        paddingTop: 96,
-        paddingBottom: 96,
-        borderTop: "1px solid #e2e8f0",
-        borderBottom: "1px solid #e2e8f0",
-      }}
-    >
+    <section id="how-it-works" className="bg-secondary pt-24 pb-24 border-t border-b border-border">
       <div className="max-w-[1280px] mx-auto px-6">
         <SectionLabel>How It Works</SectionLabel>
-        <h2
-          className="font-bold text-center mb-16"
-          style={{ fontSize: "clamp(28px, 3.5vw, 40px)", letterSpacing: "-1.5px", color: "#0f2050" }}
-        >
+        <h2 className="font-bold text-center mb-16 text-[clamp(28px,3.5vw,40px)] tracking-[-1.5px] text-primary">
           From packet to compliance report
           <br />
-          <span style={{ color: "#38bdf8" }}>in five steps.</span>
+          <span className="text-accent-blue">in five steps.</span>
         </h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
           {steps.map((step, i) => (
             <div key={step.number} className="relative flex flex-col gap-4">
-              <div
-                className="rounded-xl p-6 flex flex-col gap-3 h-full card-hover"
-                style={{ backgroundColor: "#ffffff", border: "1px solid #e2e8f0" }}
-              >
-                <div
-                  className="w-9 h-9 rounded-full flex items-center justify-center font-bold"
-                  style={{ backgroundColor: "#38bdf8", color: "#ffffff", fontSize: 12, fontWeight: 700 }}
-                >
+              <div className="rounded-xl p-6 flex flex-col gap-3 h-full card-hover bg-white border border-border">
+                <div className="w-9 h-9 rounded-full flex items-center justify-center font-bold text-xs bg-accent-blue text-white">
                   {step.number}
                 </div>
 
-                <h3 className="font-bold" style={{ fontSize: 18, letterSpacing: "-0.3px", color: "#0f2050" }}>
+                <h3 className="font-bold text-lg tracking-[-0.3px] text-primary">
                   {step.title}
                 </h3>
 
-                <p className="text-sm leading-relaxed flex-1" style={{ color: "#475569", fontSize: 13 }}>
+                <p className="text-sm leading-relaxed flex-1 text-body text-[13px]">
                   {step.description}
                 </p>
 
-                <p
-                  className="text-xs"
-                  style={{ color: "#94a3b8", fontFamily: "var(--font-jetbrains-mono)" }}
-                >
+                <p className="text-xs font-mono text-muted-soft">
                   {step.detail}
                 </p>
               </div>
 
               {i < steps.length - 1 && (
-                <div
-                  className="hidden lg:flex absolute top-10 -right-3 z-10 items-center justify-center w-6 h-6 rounded-full"
-                  style={{ backgroundColor: "#f8fafc", border: "1px solid #e2e8f0" }}
-                >
-                  <span style={{ color: "#38bdf8", fontSize: 10 }}>›</span>
+                <div className="hidden lg:flex absolute top-10 -right-3 z-10 items-center justify-center w-6 h-6 rounded-full bg-background border border-border">
+                  <span className="text-accent-blue text-[10px]">›</span>
                 </div>
               )}
             </div>

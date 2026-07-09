@@ -29,23 +29,22 @@ const footerLinks: Record<string, FooterLink[]> = {
 
 export default function Footer() {
   return (
-    <footer style={{ backgroundColor: "#f1f5f9", borderTop: "1px solid #e2e8f0", paddingTop: 64, paddingBottom: 64 }}>
+    <footer className="bg-secondary border-t border-border pt-16 pb-16">
       <div className="max-w-[1280px] mx-auto px-6">
         {/* Top row */}
         <div className="grid grid-cols-2 md:grid-cols-6 gap-10 mb-12">
           {/* Brand + contact */}
           <div className="col-span-2">
             <div className="mb-4">
-              <Image src="/logo.png" alt="Datorix" height={28} width={188} style={{ display: "block" }} unoptimized />
+              <Image src="/logo.png" alt="Datorix" height={28} width={188} className="block" unoptimized />
             </div>
-            <p className="text-sm leading-relaxed mb-4" style={{ color: "#64748b", maxWidth: 220 }}>
+            <p className="text-sm leading-relaxed mb-4 text-muted-foreground max-w-[220px]">
               Passive, agentless Database Activity Monitoring. Complete visibility. Total control.
             </p>
             <div className="flex flex-col gap-2">
               <a
                 href="mailto:info@datorix.ai"
-                className="flex items-center gap-2 text-sm transition-colors hover:text-[#0f2050]"
-                style={{ color: "#64748b" }}
+                className="flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-primary"
               >
                 <Mail size={13} />
                 info@datorix.ai
@@ -54,15 +53,14 @@ export default function Footer() {
                 href="https://www.datorix.ai"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 text-sm transition-colors hover:text-[#0f2050]"
-                style={{ color: "#64748b" }}
+                className="flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-primary"
               >
                 <ExternalLink size={13} />
                 www.datorix.ai
               </a>
-              <div className="flex items-start gap-2 text-sm" style={{ color: "#94a3b8" }}>
+              <div className="flex items-start gap-2 text-sm text-muted-soft">
                 <MapPin size={13} className="mt-0.5 shrink-0" />
-                <span style={{ fontSize: 12 }}>
+                <span className="text-xs">
                   25 Lingkaran Syed Putra,<br />
                   Mid Valley City, 59200<br />
                   Kuala Lumpur, Malaysia
@@ -74,10 +72,7 @@ export default function Footer() {
           {/* Link columns */}
           {Object.entries(footerLinks).map(([group, links]) => (
             <div key={group}>
-              <p
-                className="text-xs font-semibold uppercase tracking-widest mb-4"
-                style={{ color: "#94a3b8", letterSpacing: "1.5px" }}
-              >
+              <p className="text-xs font-semibold uppercase tracking-[1.5px] mb-4 text-muted-soft">
                 {group}
               </p>
               <ul className="flex flex-col gap-3">
@@ -85,8 +80,7 @@ export default function Footer() {
                   <li key={link.label}>
                     <Link
                       href={link.href}
-                      className="text-sm transition-colors hover:text-[#0f2050]"
-                      style={{ color: "#64748b" }}
+                      className="text-sm text-muted-foreground transition-colors hover:text-primary"
                       {...(link.download
                         ? { download: true, target: "_blank", rel: "noopener noreferrer" }
                         : {})}
@@ -101,18 +95,15 @@ export default function Footer() {
         </div>
 
         {/* Bottom row */}
-        <div
-          className="flex flex-col md:flex-row items-center justify-between gap-4 pt-8"
-          style={{ borderTop: "1px solid #e2e8f0" }}
-        >
-          <p className="text-sm" style={{ color: "#94a3b8" }}>
+        <div className="flex flex-col md:flex-row items-center justify-between gap-4 pt-8 border-t border-border">
+          <p className="text-sm text-muted-soft">
             © {new Date().getFullYear()} Datorix Sdn Bhd. All rights reserved.
           </p>
           <div className="flex items-center gap-4">
-            <Link href="#" aria-label="X (Twitter)" className="transition-colors hover:text-[#0f2050]" style={{ color: "#94a3b8" }}>
+            <Link href="#" aria-label="X (Twitter)" className="text-muted-soft transition-colors hover:text-primary">
               <X size={18} />
             </Link>
-            <Link href="#" aria-label="Website" className="transition-colors hover:text-[#0f2050]" style={{ color: "#94a3b8" }}>
+            <Link href="#" aria-label="Website" className="text-muted-soft transition-colors hover:text-primary">
               <ExternalLink size={18} />
             </Link>
           </div>

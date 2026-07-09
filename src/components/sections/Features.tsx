@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Shield, Eye, ShieldAlert, FileCode2, Cpu, Radio, GitBranch, DatabaseBackup, ClipboardList, Pickaxe, ShieldCheck, Bell, ArrowRight } from "lucide-react";
 import { SectionLabel } from "@/components/ui/section-label";
+import { cn } from "@/lib/utils";
 
 const features = [
   {
@@ -280,13 +281,10 @@ export default function Features() {
   const tab = features.find((f) => f.id === activeFeature)!;
 
   return (
-    <section id="products" style={{ backgroundColor: "#f8fafc", paddingTop: 96, paddingBottom: 96 }}>
+    <section id="products" className="bg-background pt-24 pb-24">
       <div className="max-w-[1280px] mx-auto px-6">
         <SectionLabel>Products</SectionLabel>
-        <h2
-          className="font-bold text-center mb-12"
-          style={{ fontSize: "clamp(28px, 3.5vw, 40px)", letterSpacing: "-1.5px", color: "#0f2050" }}
-        >
+        <h2 className="font-bold text-center mb-12 text-[clamp(28px,3.5vw,40px)] tracking-[-1.5px] text-primary">
           One platform. Four powerful products.
         </h2>
 
@@ -299,15 +297,13 @@ export default function Features() {
               <button
                 key={product.id}
                 onClick={() => handleProductChange(product.id)}
-                className="flex items-center gap-2 px-4 py-3 rounded-xl text-left transition-all duration-150"
-                style={{
-                  backgroundColor: isActive ? "#0f2050" : "#ffffff",
-                  border: isActive ? "1px solid #0f2050" : "1px solid #e2e8f0",
-                  cursor: "pointer",
-                }}
+                className={cn(
+                  "flex items-center gap-2 px-4 py-3 rounded-xl text-left cursor-pointer transition-all duration-150 border",
+                  isActive ? "bg-primary border-primary" : "bg-white border-border"
+                )}
               >
-                <Icon size={16} style={{ color: isActive ? "#38bdf8" : "#94a3b8", flexShrink: 0 }} />
-                <span className="text-sm font-medium" style={{ color: isActive ? "#ffffff" : "#0f2050" }}>
+                <Icon size={16} className={cn("shrink-0", isActive ? "text-accent-blue" : "text-muted-soft")} />
+                <span className={cn("text-sm font-medium", isActive ? "text-white" : "text-primary")}>
                   {product.label}
                 </span>
               </button>
@@ -318,10 +314,7 @@ export default function Features() {
         {/* Desktop: sidebar + content */}
         <div className="flex gap-8">
           {/* Left sidebar — desktop only */}
-          <aside
-            className="hidden lg:flex flex-col shrink-0 rounded-xl overflow-hidden self-start"
-            style={{ width: 220, backgroundColor: "#ffffff", border: "1px solid #e2e8f0" }}
-          >
+          <aside className="hidden lg:flex flex-col shrink-0 rounded-xl overflow-hidden self-start w-[220px] bg-white border border-border">
             {products.map((product, i) => {
               const Icon = product.icon;
               const isActive = product.id === activeProduct;
@@ -329,26 +322,18 @@ export default function Features() {
                 <button
                   key={product.id}
                   onClick={() => handleProductChange(product.id)}
-                  className="flex items-start gap-3 px-5 py-5 text-left transition-all duration-150 w-full"
-                  style={{
-                    backgroundColor: isActive ? "#f8fafc" : "transparent",
-                    borderLeft: isActive ? "3px solid #38bdf8" : "3px solid transparent",
-                    borderBottom: i < products.length - 1 ? "1px solid #f1f5f9" : "none",
-                    cursor: "pointer",
-                  }}
+                  className={cn(
+                    "flex items-start gap-3 px-5 py-5 text-left cursor-pointer transition-all duration-150 w-full border-l-[3px]",
+                    isActive ? "bg-background border-l-accent-blue" : "bg-transparent border-l-transparent",
+                    i < products.length - 1 ? "border-b border-b-secondary" : "border-b-0"
+                  )}
                 >
-                  <Icon
-                    size={18}
-                    style={{ color: isActive ? "#38bdf8" : "#94a3b8", marginTop: 1, flexShrink: 0 }}
-                  />
+                  <Icon size={18} className={cn("mt-px shrink-0", isActive ? "text-accent-blue" : "text-muted-soft")} />
                   <div>
-                    <div
-                      className="text-sm font-semibold"
-                      style={{ color: isActive ? "#0f2050" : "#475569" }}
-                    >
+                    <div className={cn("text-sm font-semibold", isActive ? "text-primary" : "text-body")}>
                       {product.label}
                     </div>
-                    <div className="text-xs mt-0.5" style={{ color: "#94a3b8" }}>
+                    <div className="text-xs mt-0.5 text-muted-soft">
                       {product.subtitle}
                     </div>
                   </div>
@@ -368,23 +353,19 @@ export default function Features() {
                   <button
                     key={feature.id}
                     onClick={() => setActiveFeature(feature.id)}
-                    className="rounded-xl p-5 flex flex-col gap-3 text-left transition-all duration-150"
-                    style={{
-                      backgroundColor: isActive ? "#eef2ff" : "#ffffff",
-                      border: isActive ? "1.5px solid #0f2050" : "1px solid #e2e8f0",
-                      cursor: "pointer",
-                      boxShadow: isActive ? "0 2px 12px rgba(15,32,80,0.08)" : "none",
-                    }}
+                    className={cn(
+                      "rounded-xl p-5 flex flex-col gap-3 text-left cursor-pointer transition-all duration-150 border",
+                      isActive
+                        ? "bg-indigo-50 border-[1.5px] border-primary shadow-[0_2px_12px_rgba(15,32,80,0.08)]"
+                        : "bg-white border-border shadow-none"
+                    )}
                   >
-                    <Icon size={20} style={{ color: isActive ? "#38bdf8" : "#94a3b8" }} />
+                    <Icon size={20} className={isActive ? "text-accent-blue" : "text-muted-soft"} />
                     <div>
-                      <div
-                        className="text-sm font-semibold"
-                        style={{ color: "#0f2050" }}
-                      >
+                      <div className="text-sm font-semibold text-primary">
                         {feature.label}
                       </div>
-                      <div className="text-xs mt-1 leading-relaxed" style={{ color: "#64748b" }}>
+                      <div className="text-xs mt-1 leading-relaxed text-muted-foreground">
                         {feature.teaser}
                       </div>
                     </div>
@@ -396,23 +377,17 @@ export default function Features() {
             {/* Detail panel */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               {/* Info card */}
-              <div
-                className="rounded-xl p-8 flex flex-col gap-5"
-                style={{ backgroundColor: "#ffffff", border: "1px solid #e2e8f0" }}
-              >
-                <h3
-                  className="font-bold"
-                  style={{ fontSize: 22, letterSpacing: "-0.5px", color: "#0f2050" }}
-                >
+              <div className="rounded-xl p-8 flex flex-col gap-5 bg-white border border-border">
+                <h3 className="font-bold text-[22px] tracking-[-0.5px] text-primary">
                   {tab.headline}
                 </h3>
-                <p className="text-sm leading-relaxed" style={{ color: "#475569", fontSize: 15 }}>
+                <p className="text-sm leading-relaxed text-body text-[15px]">
                   {tab.description}
                 </p>
                 <ul className="flex flex-col gap-2 mt-1">
                   {tab.bullets.map((b) => (
-                    <li key={b} className="flex items-start gap-2 text-sm" style={{ color: "#475569" }}>
-                      <ArrowRight size={14} style={{ color: "#38bdf8", flexShrink: 0, marginTop: 2 }} />
+                    <li key={b} className="flex items-start gap-2 text-sm text-body">
+                      <ArrowRight size={14} className="text-accent-blue shrink-0 mt-0.5" />
                       {b}
                     </li>
                   ))}
@@ -420,33 +395,16 @@ export default function Features() {
               </div>
 
               {/* Code window */}
-              <div
-                className="rounded-xl overflow-hidden border"
-                style={{ backgroundColor: "#1e293b", borderColor: "#334155" }}
-              >
-                <div
-                  className="px-4 py-3 border-b flex items-center gap-2"
-                  style={{ backgroundColor: "#334155", borderColor: "#475569" }}
-                >
-                  <span className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: "#ef4444" }} />
-                  <span className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: "#f59e0b" }} />
-                  <span className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: "#22c55e" }} />
-                  <span
-                    className="ml-2 text-xs"
-                    style={{ color: "#64748b", fontFamily: "var(--font-jetbrains-mono)" }}
-                  >
+              <div className="rounded-xl overflow-hidden border bg-slate-800 border-slate-700">
+                <div className="px-4 py-3 border-b flex items-center gap-2 bg-slate-700 border-slate-600">
+                  <span className="w-2.5 h-2.5 rounded-full bg-accent-rose" />
+                  <span className="w-2.5 h-2.5 rounded-full bg-amber-500" />
+                  <span className="w-2.5 h-2.5 rounded-full bg-accent-emerald" />
+                  <span className="ml-2 text-xs font-mono text-slate-500">
                     {tab.id}.conf
                   </span>
                 </div>
-                <pre
-                  className="p-6 text-xs leading-relaxed overflow-x-auto"
-                  style={{
-                    fontFamily: "var(--font-jetbrains-mono)",
-                    color: "#94a3b8",
-                    whiteSpace: "pre-wrap",
-                    wordBreak: "break-word",
-                  }}
-                >
+                <pre className="p-6 text-xs leading-relaxed overflow-x-auto font-mono text-slate-400 whitespace-pre-wrap break-words">
                   {tab.code}
                 </pre>
               </div>

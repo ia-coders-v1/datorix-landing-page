@@ -25,18 +25,15 @@ export default function Navbar() {
 
   return (
     <header
-      className="fixed top-0 left-0 right-0 z-50 transition-colors duration-200"
-      style={{
-        height: 64,
-        backgroundColor: scrolled ? "rgba(255,255,255,0.95)" : "#ffffff",
-        borderBottom: scrolled ? "1px solid #e2e8f0" : "1px solid transparent",
-        backdropFilter: scrolled ? "blur(8px)" : "none",
-      }}
+      className={cn(
+        "fixed top-0 left-0 right-0 z-50 h-16 transition-colors duration-200",
+        scrolled ? "bg-white/95 border-b border-border backdrop-blur-sm" : "bg-white border-b border-transparent"
+      )}
     >
       <div className="max-w-[1280px] mx-auto px-6 h-full flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center shrink-0">
-          <Image src="/logo.png" alt="Datorix" height={28} width={188} style={{ display: "block" }} unoptimized />
+          <Image src="/logo.png" alt="Datorix" height={28} width={188} className="block" unoptimized />
         </Link>
 
         {/* Desktop nav */}
@@ -45,8 +42,7 @@ export default function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm font-medium transition-colors hover:text-[#0f2050]"
-              style={{ color: "#64748b", fontSize: 14, fontWeight: 500 }}
+              className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
             >
               {link.label}
             </Link>
@@ -57,18 +53,10 @@ export default function Navbar() {
         <div className="hidden md:flex items-center gap-3">
           <Link
             href="#cta"
-            className={cn(buttonVariants({ variant: "default" }), "text-sm font-semibold bg-[#0f2050] hover:bg-[#0a1838] text-white transition-all duration-150 hover:-translate-y-0.5 hover:shadow-md active:scale-[0.98]")}
-            style={{
-              fontWeight: 600,
-              fontSize: 14,
-              height: 40,
-              paddingLeft: 20,
-              paddingRight: 20,
-              borderRadius: 8,
-              border: "none",
-              display: "inline-flex",
-              alignItems: "center",
-            }}
+            className={cn(
+              buttonVariants({ variant: "default" }),
+              "inline-flex items-center h-10 px-5 rounded-md border-0 text-sm font-semibold bg-primary hover:bg-primary-active text-white transition-all duration-150 hover:-translate-y-0.5 hover:shadow-md active:scale-[0.98]"
+            )}
           >
             Get Started
           </Link>
@@ -76,8 +64,7 @@ export default function Navbar() {
 
         {/* Mobile hamburger */}
         <button
-          className="md:hidden p-2"
-          style={{ color: "#0f2050" }}
+          className="md:hidden p-2 text-primary"
           onClick={() => setOpen(!open)}
           aria-label="Toggle menu"
         >
@@ -87,17 +74,13 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {open && (
-        <div
-          className="md:hidden px-6 pb-6 flex flex-col gap-4"
-          style={{ backgroundColor: "#ffffff", borderBottom: "1px solid #e2e8f0" }}
-        >
+        <div className="md:hidden px-6 pb-6 flex flex-col gap-4 bg-white border-b border-border">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
               onClick={() => setOpen(false)}
-              className="text-sm font-medium"
-              style={{ color: "#475569" }}
+              className="text-sm font-medium text-body"
             >
               {link.label}
             </Link>
@@ -105,14 +88,7 @@ export default function Navbar() {
           <Link
             href="#cta"
             onClick={() => setOpen(false)}
-            className="flex items-center justify-center text-sm font-semibold bg-[#0f2050] hover:bg-[#0a1838] text-white transition-all duration-150 active:scale-[0.98]"
-            style={{
-              fontWeight: 600,
-              fontSize: 14,
-              height: 40,
-              borderRadius: 8,
-              textDecoration: "none",
-            }}
+            className="flex items-center justify-center h-10 rounded-md text-sm font-semibold bg-primary hover:bg-primary-active text-white no-underline transition-all duration-150 active:scale-[0.98]"
           >
             Get Started
           </Link>

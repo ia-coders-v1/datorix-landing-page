@@ -24,35 +24,28 @@ const problems = [
 
 export default function Problem() {
   return (
-    <section id="problem" style={{ backgroundColor: "#f8fafc", paddingTop: 96, paddingBottom: 96 }}>
+    <section id="problem" className="bg-background pt-24 pb-24">
       <div className="max-w-[1280px] mx-auto px-6">
         <SectionLabel>The Problem</SectionLabel>
-        <h2
-          className="font-bold text-center mb-16"
-          style={{ fontSize: "clamp(28px, 3.5vw, 40px)", letterSpacing: "-1.5px", color: "#0f2050" }}
-        >
+        <h2 className="font-bold text-center mb-16 text-[clamp(28px,3.5vw,40px)] tracking-[-1.5px] text-primary">
           Your database is your biggest
           <br />
-          <span style={{ color: "#38bdf8" }}>unmonitored attack surface.</span>
+          <span className="text-accent-blue">unmonitored attack surface.</span>
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {problems.map(({ icon: Icon, title, body }) => (
             <div
               key={title}
-              className="rounded-xl p-8 flex flex-col gap-4 card-hover"
-              style={{ backgroundColor: "#ffffff", border: "1px solid #e2e8f0" }}
+              className="rounded-xl p-8 flex flex-col gap-4 card-hover bg-white border border-border"
             >
-              <div
-                className="w-10 h-10 rounded-lg flex items-center justify-center"
-                style={{ backgroundColor: "#38bdf814" }}
-              >
-                <Icon size={20} style={{ color: "#38bdf8" }} />
+              <div className="w-10 h-10 rounded-lg flex items-center justify-center bg-accent-blue/8">
+                <Icon size={20} className="text-accent-blue" />
               </div>
-              <h3 className="font-bold" style={{ fontSize: 18, letterSpacing: "-0.3px", color: "#0f2050" }}>
+              <h3 className="font-bold text-lg tracking-[-0.3px] text-primary">
                 {title}
               </h3>
-              <p className="text-sm leading-relaxed" style={{ color: "#64748b", fontSize: 15 }}>
+              <p className="text-sm leading-relaxed text-muted-foreground text-[15px]">
                 {body}
               </p>
             </div>

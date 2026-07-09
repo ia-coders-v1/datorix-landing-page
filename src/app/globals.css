@@ -23,6 +23,18 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
   --color-destructive: var(--destructive);
+  --color-primary-active: var(--primary-active);
+  --color-primary-disabled: var(--primary-disabled);
+  --color-hairline: var(--hairline);
+  --color-hairline-strong: var(--hairline-strong);
+  --color-surface-soft: var(--surface-soft);
+  --color-body: var(--body);
+  --color-body-strong: var(--body-strong);
+  --color-muted-text: var(--muted-text);
+  --color-muted-soft: var(--muted-soft);
+  --color-accent-emerald: var(--accent-emerald);
+  --color-accent-rose: var(--accent-rose);
+  --color-accent-blue: var(--accent-blue);
   --radius-sm: 6px;
   --radius-md: 8px;
   --radius-lg: 12px;

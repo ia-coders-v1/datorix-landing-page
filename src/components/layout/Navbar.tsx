@@ -45,10 +45,15 @@ export default function Navbar() {
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 h-16 transition-colors duration-200"
+        "fixed top-0 left-0 right-0 z-50 h-16 border-b border-border transition-colors duration-200"
       )}
     >
-      <div className={cn("max-w-7xl mx-auto px-6 h-full flex items-center justify-between", scrolled ? "bg-white border-b border-border backdrop-blur-2xl shadow-md" : "")}>
+      <div
+        className={cn(
+          "max-w-7xl mx-auto px-6 h-full flex items-center justify-between",
+          scrolled ? "bg-white backdrop-blur-2xl" : ""
+        )}
+      >
         {/* Logo */}
         <Link href="/" className="flex items-center shrink-0">
           <Image src="/logo.png" alt="Datorix" height={28} width={188} className="block" unoptimized />

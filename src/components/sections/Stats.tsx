@@ -42,7 +42,7 @@ function Counter({ value, suffix, label, decimal }: typeof stats[0]) {
   }, [value, decimal]);
 
   return (
-    <div ref={ref} className="rounded-xl p-8 flex flex-col gap-2 text-center card-hover bg-white border border-muted-soft">
+    <div ref={ref} className="rounded-xl p-8 flex flex-col gap-2 text-center card-hover bg-surface-tonal">
       <p className="font-bold leading-none text-[56px] text-primary tracking-[-1.5px]">
         {decimal ? current.toFixed(2) : current}
         {suffix}

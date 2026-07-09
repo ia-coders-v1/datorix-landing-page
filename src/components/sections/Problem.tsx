@@ -37,7 +37,7 @@ export default function Problem() {
           {problems.map(({ icon: Icon, title, body }) => (
             <div
               key={title}
-              className="rounded-xl p-8 flex flex-col gap-4 card-hover bg-white border border-muted-soft"
+              className="rounded-xl p-8 flex flex-col gap-4 card-hover bg-surface-tonal"
             >
               <div className="w-10 h-10 rounded-lg flex items-center justify-center bg-accent-blue/8">
                 <Icon size={20} className="text-accent-blue" />

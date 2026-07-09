@@ -52,7 +52,7 @@ export default function HowItWorks() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
           {steps.map((step, i) => (
             <div key={step.number} className="relative flex flex-col gap-4">
-              <div className="rounded-xl p-6 flex flex-col gap-3 h-full card-hover bg-white border border-muted-soft">
+              <div className="rounded-xl p-6 flex flex-col gap-3 h-full card-hover bg-surface-tonal">
                 <div className="w-9 h-9 rounded-full flex items-center justify-center font-bold text-xs bg-accent-blue text-white">
                   {step.number}
                 </div>

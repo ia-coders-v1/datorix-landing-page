@@ -18,7 +18,7 @@ export default function Databases() {
           {databases.map(({ name, detail }) => (
             <div
               key={name}
-              className="flex flex-col items-center gap-1 px-5 py-3 rounded-xl card-hover bg-white border border-muted-soft"
+              className="flex flex-col items-center gap-1 px-5 py-3 rounded-xl card-hover bg-surface-tonal"
             >
               <span className="font-semibold text-sm text-primary">
                 {name}

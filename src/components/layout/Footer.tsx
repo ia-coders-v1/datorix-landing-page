@@ -11,7 +11,8 @@ const footerLinks: Record<string, FooterLink[]> = {
     { label: "Use Cases", href: "#use-cases" },
   ],
   Resources: [
-    { label: "Datasheet (PDF)", href: "/docs/datorix_enterprise_datasheet_DAM.pdf", download: true },
+    { label: "DAM Datasheet", href: "/docs/datorix_enterprise_datasheet_DAM.pdf", download: true },
+    { label: "Backup & Replication Datasheet", href: "/docs/datorix-backup-replication-datasheet.pdf", download: true },
     { label: "API Reference", href: "#" },
     { label: "Changelog", href: "#" },
   ],

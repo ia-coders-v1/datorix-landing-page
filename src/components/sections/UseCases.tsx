@@ -54,7 +54,7 @@ export default function UseCases() {
               key={persona}
               className={cn(
                 "rounded-xl p-8 flex flex-col gap-5",
-                featured ? "bg-primary border-none" : "bg-white border border-border card-hover"
+                featured ? "bg-primary border-none" : "bg-white border border-muted-soft card-hover"
               )}
             >
               <div className="flex items-center gap-2">

@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { ArrowRight, Download, Terminal } from "lucide-react";
+import { ArrowRight, Terminal } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const SQL_LINES = [
@@ -73,8 +73,8 @@ function CodeWindow() {
 
 export default function Hero() {
   return (
-    <section className="bg-background pt-[calc(64px+96px)] pb-24">
-      <div className="max-w-[1280px] mx-auto px-6">
+    <section className="bg-background pt-40 pb-24">
+      <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Left — 7 cols */}
           <div className="lg:col-span-7 flex flex-col gap-6">
@@ -93,7 +93,7 @@ export default function Hero() {
               <span className="text-accent-blue">Total Control.</span>
             </h1>
 
-            <p className="leading-relaxed text-body max-w-[520px] text-lg">
+            <p className="leading-relaxed text-body max-w-130 text-lg">
               Datorix DAM Platform delivers passive, agentless monitoring of all database activities in real time. Powered by Deep Packet Inspection — zero performance impact, complete visibility.
             </p>
 
@@ -107,24 +107,14 @@ export default function Hero() {
               </Link>
               <Link
                 href="#how-it-works"
-                className="flex items-center font-semibold text-sm h-11 px-6 rounded-md no-underline bg-transparent text-primary border border-border hover:border-primary transition-all duration-150 hover:-translate-y-0.5 hover:shadow-sm active:scale-[0.98]"
+                className="flex items-center font-semibold text-sm h-11 px-6 rounded-md no-underline bg-transparent text-primary border border-primary hover: transition-all duration-150 hover:-translate-y-0.5 hover:shadow-sm active:scale-[0.98]"
               >
                 See How It Works
-              </Link>
-              <Link
-                href="/docs/datorix_enterprise_datasheet_DAM.pdf"
-                download
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 font-semibold text-sm h-11 px-3 rounded-md no-underline bg-transparent text-primary transition-all duration-150 hover:-translate-y-0.5 active:scale-[0.98]"
-              >
-                <Download size={16} />
-                Download Datasheet
               </Link>
             </div>
 
             {/* Inline stats */}
-            <div className="flex flex-wrap gap-8 mt-4 pt-8 border-t border-border">
+            <div className="flex flex-wrap gap-8 mt-4 pt-8 border-t border-muted-soft">
               {[
                 { value: "5", label: "Databases supported" },
                 { value: "99.99%", label: "Uptime SLA" },

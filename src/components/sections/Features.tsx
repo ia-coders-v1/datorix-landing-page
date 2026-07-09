@@ -299,7 +299,7 @@ export default function Features() {
                 onClick={() => handleProductChange(product.id)}
                 className={cn(
                   "flex items-center gap-2 px-4 py-3 rounded-xl text-left cursor-pointer transition-all duration-150 border",
-                  isActive ? "bg-primary border-primary" : "bg-white border-border"
+                  isActive ? "bg-primary border-primary" : "bg-white border-muted-soft card-hover"
                 )}
               >
                 <Icon size={16} className={cn("shrink-0", isActive ? "text-accent-blue" : "text-muted-soft")} />
@@ -314,7 +314,7 @@ export default function Features() {
         {/* Desktop: sidebar + content */}
         <div className="flex gap-8">
           {/* Left sidebar — desktop only */}
-          <aside className="hidden lg:flex flex-col shrink-0 rounded-xl overflow-hidden self-start w-[220px] bg-white border border-border">
+          <aside className="hidden lg:flex flex-col shrink-0 rounded-xl overflow-hidden self-start w-[220px] bg-white border border-muted-soft shadow-sm">
             {products.map((product, i) => {
               const Icon = product.icon;
               const isActive = product.id === activeProduct;
@@ -357,7 +357,7 @@ export default function Features() {
                       "rounded-xl p-5 flex flex-col gap-3 text-left cursor-pointer transition-all duration-150 border",
                       isActive
                         ? "bg-indigo-50 border-[1.5px] border-primary shadow-[0_2px_12px_rgba(15,32,80,0.08)]"
-                        : "bg-white border-border shadow-none"
+                        : "bg-white border-muted-soft card-hover"
                     )}
                   >
                     <Icon size={20} className={isActive ? "text-accent-blue" : "text-muted-soft"} />
@@ -377,7 +377,7 @@ export default function Features() {
             {/* Detail panel */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               {/* Info card */}
-              <div className="rounded-xl p-8 flex flex-col gap-5 bg-white border border-border">
+              <div className="rounded-xl p-8 flex flex-col gap-5 card-hover bg-white border border-muted-soft">
                 <h3 className="font-bold text-[22px] tracking-[-0.5px] text-primary">
                   {tab.headline}
                 </h3>

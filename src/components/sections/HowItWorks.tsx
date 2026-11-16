@@ -40,7 +40,7 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <section id="how-it-works" className="bg-secondary pt-24 pb-24 border-t border-b border-border">
+    <section id="how-it-works" className="scroll-mt-20 bg-secondary pt-24 pb-24 border-t border-b border-border">
       <div className="max-w-[1280px] mx-auto px-6">
         <SectionLabel>How It Works</SectionLabel>
         <h2 className="font-bold text-center mb-16 text-[clamp(28px,3.5vw,40px)] tracking-[-1.5px] text-primary">

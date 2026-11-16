@@ -11,7 +11,7 @@ export default function Databases() {
   return (
     <section className="bg-secondary pt-16 pb-16 border-t border-b border-border">
       <div className="max-w-[1280px] mx-auto px-6 flex flex-col items-center gap-8">
-        <SectionLabel>Works with your existing database stack</SectionLabel>
+        <SectionLabel>Engines Datorix monitors and protects</SectionLabel>
 
         <div className="flex flex-wrap items-center justify-center gap-3">
           {databases.map(({ name }) => (
@@ -25,6 +25,9 @@ export default function Databases() {
             </div>
           ))}
         </div>
+        <p className="text-xs text-muted-foreground text-center max-w-[560px]">
+          Replication and native audit collection support fewer engines; the feature sections list them.
+        </p>
       </div>
     </section>
   );

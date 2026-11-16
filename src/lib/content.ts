@@ -1,5 +1,4 @@
-// Feature copy for the landing page. Wording comes from Datorix-Website-Features.md;
-// scripts/check-content.mjs fails the build check when a card title here and in the md drift.
+// Page copy; scripts/check-content.mjs fails when it drifts from Datorix-Website-Features.md.
 
 export type Card = { title: string; body: string };
 
@@ -32,7 +31,7 @@ export const featureSections: FeatureSection[] = [
     tagline: "Complete visibility into what happens inside your databases, with nothing installed on them.",
     cards: [
       { title: "Live query stream", body: "Watch queries arrive in real time. Filter by user, source, level or time, and open any entry to read the full statement." },
-      { title: "Three ways of seeing, no blind spots", body: "An inline proxy sees app traffic. A network sensor sees traffic that goes around the proxy. A read-only audit collector sees what the database itself logged, including a DBA working locally with no network traffic at all." },
+      { title: "Three ways of seeing", body: "An inline proxy sees app traffic. A network sensor sees traffic that goes around the proxy. A read-only audit collector sees what the database itself logged, including a DBA working locally with no network traffic at all." },
       { title: "Bypass detection", body: "Know when someone connects straight to the database instead of through the approved path, and who they are." },
       { title: "Nothing on your database servers", body: "Datorix connects with a read-only login and reads the network. No agents or daemons on the database host, and no performance hit on it." },
       { title: "Query Explorer", body: "Search every captured query. See who ran it, from where, how long it took, how many rows it touched and whether it was blocked." },
@@ -103,7 +102,7 @@ export const featureSections: FeatureSection[] = [
     cards: [
       { title: "Linux and Windows agents", body: "A small service on each host. Windows backups use Volume Shadow Copy, so open and locked files are still captured at one point in time." },
       { title: "Your storage, your keys", body: "Back up to an S3 bucket or a REST server you control. Repositories are encrypted." },
-      { title: "Plans and schedules", body: "Pick the folders, set exclusions, then run daily, weekly, monthly or on your own cron schedule in your time zone. Missed runs catch up after an outage." },
+      { title: "Plans and schedules", body: "Pick the folders, set exclusions, then run daily, weekly, monthly or on your own cron schedule in your time zone. A run missed in the last 24 hours starts once service returns." },
       { title: "Retention you control", body: "Keep the last N snapshots plus daily, weekly and monthly ones. You see exactly what would be removed before anything is." },
       { title: "Staged restore", body: "Restore any snapshot, or part of one, into a directory you choose. Nothing on the host is overwritten." },
       { title: "Know when it fails", body: "An overview of protected hosts, failed jobs, silent agents and unscheduled plans, each linked to where you fix it." },

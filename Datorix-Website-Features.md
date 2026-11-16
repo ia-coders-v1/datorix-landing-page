@@ -28,7 +28,7 @@ Complete visibility into what happens inside your databases, with nothing instal
 **Live query stream**
 Watch queries arrive in real time. Filter by user, source, level or time, and open any entry to read the full statement.
 
-**Three ways of seeing, no blind spots**
+**Three ways of seeing**
 An inline proxy sees app traffic. A network sensor sees traffic that goes around the proxy. A read-only audit collector sees what the database itself logged, including a DBA working locally with no network traffic at all.
 
 **Bypass detection**
@@ -152,7 +152,7 @@ A small service on each host. Windows backups use Volume Shadow Copy, so open an
 Back up to an S3 bucket or a REST server you control. Repositories are encrypted.
 
 **Plans and schedules**
-Pick the folders, set exclusions, then run daily, weekly, monthly or on your own cron schedule in your time zone. Missed runs catch up after an outage.
+Pick the folders, set exclusions, then run daily, weekly, monthly or on your own cron schedule in your time zone. A run missed in the last 24 hours starts once service returns.
 
 **Retention you control**
 Keep the last N snapshots plus daily, weekly and monthly ones. You see exactly what would be removed before anything is.

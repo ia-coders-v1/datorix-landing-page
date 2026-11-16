@@ -1,3 +1,4 @@
+import FeatureCard from "./FeatureCard";
 import { SectionLabel } from "@/components/ui/section-label";
 import { featureSections } from "@/lib/content";
 import { cn } from "@/lib/utils";
@@ -25,10 +26,7 @@ export default function FeatureSections() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {section.cards.map((card) => (
-                <div key={card.title} className="rounded-xl p-8 flex flex-col gap-3 card-hover bg-surface-tonal">
-                  <h3 className="font-bold text-lg tracking-[-0.3px] text-primary">{card.title}</h3>
-                  <p className="text-sm leading-relaxed text-muted-foreground text-[15px]">{card.body}</p>
-                </div>
+                <FeatureCard key={card.title} card={card} />
               ))}
             </div>
           </div>

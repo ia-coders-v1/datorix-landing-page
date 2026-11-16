@@ -63,7 +63,7 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-6">
+        <nav className="hidden lg:flex items-center gap-6">
           {navLinks.map((link) => (
             <Link
               key={link.href}
@@ -97,7 +97,7 @@ export default function Navbar() {
         </nav>
 
         {/* CTA */}
-        <div className="hidden md:flex items-center gap-3">
+        <div className="hidden lg:flex items-center gap-3">
           <Link
             href="#cta"
             className={cn(
@@ -111,7 +111,7 @@ export default function Navbar() {
 
         {/* Mobile hamburger */}
         <button
-          className="md:hidden p-2 text-primary"
+          className="lg:hidden p-2 text-primary"
           onClick={() => setOpen(!open)}
           aria-label="Toggle menu"
         >
@@ -121,7 +121,7 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {open && (
-        <div className="md:hidden px-6 pb-6 flex flex-col gap-4 bg-white border-b border-border">
+        <div className="lg:hidden px-6 pb-6 flex flex-col gap-4 bg-white border-b border-border">
           {navLinks.map((link) => (
             <Link
               key={link.href}

@@ -41,7 +41,7 @@ export default function Footer() {
               <Image src="/logo.png" alt="Datorix" height={28} width={188} className="block" unoptimized />
             </div>
             <p className="text-sm leading-relaxed mb-4 text-muted-foreground max-w-[220px]">
-              Passive, agentless Database Activity Monitoring. Complete visibility. Total control.
+              Database security, replication and backup from one console.
             </p>
             <div className="flex flex-col gap-2">
               <a

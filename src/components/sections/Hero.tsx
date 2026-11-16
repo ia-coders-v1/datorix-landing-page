@@ -124,7 +124,9 @@ export default function Hero() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-16 pt-12 border-t border-muted-soft">
           {benefits.map((b) => (
             <div key={b.title} className="flex flex-col gap-2">
-              <h2 className="font-bold text-lg tracking-[-0.3px] text-primary">{b.title}</h2>
+              <p className="font-bold text-lg tracking-[-0.3px] text-primary">
+                <strong>{b.title}</strong>
+              </p>
               <p className="text-sm leading-relaxed text-muted-foreground">{b.body}</p>
             </div>
           ))}

@@ -1,3 +1,4 @@
+import FeatureCard from "./FeatureCard";
 import { Badge } from "@/components/ui/badge";
 import { SectionLabel } from "@/components/ui/section-label";
 import { roadmapBlocks } from "@/lib/content";
@@ -25,10 +26,7 @@ export default function Roadmap() {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {block.cards.map((card) => (
-                  <div key={card.title} className="rounded-xl p-8 flex flex-col gap-3 card-hover bg-surface-tonal">
-                    <h4 className="font-bold text-lg tracking-[-0.3px] text-primary">{card.title}</h4>
-                    <p className="text-sm leading-relaxed text-muted-foreground text-[15px]">{card.body}</p>
-                  </div>
+                  <FeatureCard key={card.title} card={card} as="h4" />
                 ))}
               </div>
             </div>

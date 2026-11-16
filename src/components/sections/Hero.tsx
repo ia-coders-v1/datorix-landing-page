@@ -40,8 +40,8 @@ function CodeWindow() {
       <div className="p-4 space-y-1.5 min-h-[260px] font-mono text-xs">
         {SQL_LINES.slice(0, visible).map((line, i) => (
           <div key={i} className="flex items-start gap-3 leading-relaxed">
-            <span className="min-w-[90px] text-slate-500">{line.time}</span>
-            <span className="min-w-[80px] text-accent-blue">{line.user}</span>
+            <span className="hidden sm:inline min-w-[90px] text-slate-500">{line.time}</span>
+            <span className="min-w-[64px] sm:min-w-[80px] text-accent-blue">{line.user}</span>
             <span
               className={cn(
                 "flex-1 truncate",
@@ -53,7 +53,7 @@ function CodeWindow() {
             {line.flag && (
               <span
                 className={cn(
-                  "shrink-0 font-semibold px-2 py-0.5 rounded-full text-[10px]",
+                  "shrink-0 font-semibold px-2 py-0.5 rounded-full text-[11px]",
                   line.flag === "BLOCKED" ? "bg-accent-rose/13 text-accent-rose" : "bg-amber-500/13 text-amber-500"
                 )}
               >
@@ -74,7 +74,7 @@ function CodeWindow() {
 
 export default function Hero() {
   return (
-    <section className="bg-background pt-40 pb-[77px]">
+    <section className="bg-background pt-28 sm:pt-40 pb-[77px]">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Left — 7 cols */}

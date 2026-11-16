@@ -9,10 +9,10 @@ const stats = [
 
 export default function Stats() {
   return (
-    <section id="stats" className="scroll-mt-20 bg-secondary pt-24 pb-24 border-t border-b border-border">
+    <section id="stats" className="scroll-mt-20 bg-secondary py-16 sm:py-24 border-t border-b border-border">
       <div className="max-w-[1280px] mx-auto px-6">
         <SectionLabel>By the Numbers</SectionLabel>
-        <h2 className="font-bold text-center mb-16 text-[clamp(28px,3.5vw,40px)] tracking-[-1.5px] text-primary">
+        <h2 className="font-bold text-center mb-10 sm:mb-16 text-[clamp(28px,3.5vw,40px)] tracking-[-1.5px] text-primary">
           Numbers you can
           <br />
           <span className="text-accent-blue">check against the product</span>

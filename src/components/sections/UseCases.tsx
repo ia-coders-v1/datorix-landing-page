@@ -41,7 +41,7 @@ const cases = [
 
 export default function UseCases() {
   return (
-    <section id="use-cases" className="scroll-mt-20 bg-background pt-24 pb-24">
+    <section id="use-cases" className="scroll-mt-20 bg-background py-16 sm:py-24">
       <div className="max-w-[1280px] mx-auto px-6">
         <SectionLabel>Use Cases</SectionLabel>
         <h2 className="font-bold text-center mb-16 text-[clamp(28px,3.5vw,40px)] tracking-[-1.5px] text-primary">

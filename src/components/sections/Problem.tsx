@@ -24,7 +24,7 @@ const problems = [
 
 export default function Problem() {
   return (
-    <section id="problem" className="bg-background pt-[77px] pb-24">
+    <section id="problem" className="bg-background pt-[77px] pb-16 sm:pb-24">
       <div className="max-w-[1280px] mx-auto px-6">
         <SectionLabel>The Problem</SectionLabel>
         <h2 className="font-bold text-center mb-16 text-[clamp(28px,3.5vw,40px)] tracking-[-1.5px] text-primary">

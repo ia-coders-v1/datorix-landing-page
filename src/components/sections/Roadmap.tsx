@@ -6,7 +6,7 @@ import { roadmapBlocks } from "@/lib/content";
 // Item titles are the <h4> chips; the bodies sit in a native <details> so they stay in the DOM.
 export default function Roadmap() {
   return (
-    <section id="roadmap" className="scroll-mt-28 bg-primary text-white py-28">
+    <section id="roadmap" className="scroll-mt-20 bg-primary text-white py-16 sm:py-28">
       <div className="max-w-[880px] mx-auto px-6">
         <div className="flex justify-center mb-4">
           <span className="inline-flex items-center font-semibold uppercase text-[11px] tracking-[1.5px] rounded-full px-3.5 py-1 border border-white/20 text-sky-300">
@@ -16,7 +16,7 @@ export default function Roadmap() {
         <h2 className="font-bold text-center mb-4 text-[clamp(28px,3.5vw,40px)] tracking-[-1.5px] text-white">
           What we are building next
         </h2>
-        <p className="text-center mx-auto mb-20 max-w-[560px] text-base text-slate-300">
+        <p className="text-center mx-auto mb-12 sm:mb-20 max-w-[560px] text-base text-slate-300">
           Planned work, in two blocks. None of this is available yet.
         </p>
 
@@ -24,7 +24,7 @@ export default function Roadmap() {
           {roadmapBlocks.map((block, i) => {
             const last = i === roadmapBlocks.length - 1;
             return (
-              <li key={block.title} className="relative pl-12 sm:pl-16 pb-20 last:pb-0">
+              <li key={block.title} className="relative pl-12 sm:pl-16 pb-14 sm:pb-20 last:pb-0">
                 {!last && (
                   <span
                     aria-hidden="true"
@@ -61,7 +61,7 @@ export default function Roadmap() {
                   </ul>
 
                   <details className="group mt-6">
-                    <summary className="inline-flex items-center gap-1.5 cursor-pointer list-none text-sm font-medium text-sky-300 hover:text-white transition-colors [&::-webkit-details-marker]:hidden focus-visible:outline-2 focus-visible:outline-ring rounded">
+                    <summary className="inline-flex items-center gap-1.5 min-h-10 cursor-pointer list-none text-sm font-medium text-sky-300 hover:text-white transition-colors [&::-webkit-details-marker]:hidden focus-visible:outline-2 focus-visible:outline-ring rounded">
                       Read the details
                       <ChevronDown
                         size={14}

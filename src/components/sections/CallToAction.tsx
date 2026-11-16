@@ -2,7 +2,7 @@ import { ArrowRight } from "lucide-react";
 
 export default function CallToAction() {
   return (
-    <section id="cta" className="scroll-mt-20 bg-background pt-24 pb-24">
+    <section id="cta" className="scroll-mt-20 bg-background py-16 sm:py-24">
       <div className="max-w-[1280px] mx-auto px-6">
         <div className="rounded-xl px-8 py-16 text-center flex flex-col items-center gap-6 bg-primary">
           <p className="font-semibold uppercase tracking-[1.5px] text-xs text-muted-soft">Get started</p>

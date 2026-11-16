@@ -16,7 +16,7 @@ type Tone = keyof typeof tone;
 
 function Pill({ tone: t, children }: { tone: Tone; children: ReactNode }) {
   return (
-    <span className={cn("shrink-0 font-semibold px-2 py-0.5 rounded-full text-[10px] whitespace-nowrap", tone[t])}>
+    <span className={cn("shrink-0 font-semibold px-2 py-0.5 rounded-full text-[11px] whitespace-nowrap", tone[t])}>
       {children}
     </span>
   );
@@ -91,7 +91,7 @@ function SeeVisual() {
           ["P99", "38 ms"],
         ].map(([k, v]) => (
           <div key={k} className="rounded-md bg-slate-900/40 border border-slate-700 px-2 py-2 text-center">
-            <div className="text-[10px] text-slate-500">{k}</div>
+            <div className="text-[11px] text-slate-500">{k}</div>
             <div className="text-slate-200">{v}</div>
           </div>
         ))}
@@ -110,7 +110,7 @@ function ProtectVisual() {
   return (
     <Panel title="firewall">
       <div className="rounded-md border border-slate-700 bg-slate-900/40 px-3 py-2.5">
-        <div className="text-[10px] text-slate-500 mb-1">incoming · admin @ 10.0.4.17</div>
+        <div className="text-[11px] text-slate-500 mb-1">incoming · admin @ 10.0.4.17</div>
         <div className="text-accent-rose truncate">DROP TABLE sessions; --</div>
       </div>
       <ArrowDown size={14} className="mx-auto text-slate-500" />
@@ -153,7 +153,7 @@ function DataVisual() {
         <div className="h-1.5 rounded-full bg-slate-700 overflow-hidden">
           <div className="h-full w-[82%] rounded-full bg-amber-500" />
         </div>
-        <div className="mt-2 text-[10px] text-slate-500">after-hours access · bulk reads on tagged columns</div>
+        <div className="mt-2 text-[11px] text-slate-500">after-hours access · bulk reads on tagged columns</div>
       </div>
     </Panel>
   );
@@ -197,21 +197,21 @@ function ReplicateVisual() {
     <Panel title="replication job">
       <div className="flex items-center">
         <div className={node}>
-          <div className="text-[10px] text-slate-500">source</div>
+          <div className="text-[11px] text-slate-500">source</div>
           <div className="truncate text-slate-100">PostgreSQL</div>
         </div>
         <div className={pipe}>
           <span className="flow-dot" />
         </div>
         <div className={cn(node, "border-accent-blue/50")}>
-          <div className="text-[10px] text-slate-500">change log</div>
+          <div className="text-[11px] text-slate-500">change log</div>
           <div className="truncate text-accent-blue">CDC</div>
         </div>
         <div className={pipe}>
           <span className="flow-dot [animation-delay:0.6s]" />
         </div>
         <div className={node}>
-          <div className="text-[10px] text-slate-500">target</div>
+          <div className="text-[11px] text-slate-500">target</div>
           <div className="truncate text-slate-100">ClickHouse</div>
         </div>
       </div>
@@ -269,7 +269,7 @@ function OperateVisual() {
       <div className="flex flex-col gap-1.5">
         {users.map(([name, role, t]) => (
           <Row key={name}>
-            <span className="w-6 h-6 shrink-0 rounded-full bg-slate-600 text-slate-200 flex items-center justify-center text-[10px] uppercase">
+            <span className="w-6 h-6 shrink-0 rounded-full bg-slate-600 text-slate-200 flex items-center justify-center text-[11px] uppercase">
               {name[0]}
             </span>
             <span className="flex-1 min-w-0 truncate text-slate-200">{name}</span>
@@ -284,7 +284,7 @@ function OperateVisual() {
           ["hosting", "Self-hosted"],
         ].map(([k, v]) => (
           <div key={k} className="min-w-0 rounded-md bg-slate-900/40 border border-slate-700 px-2 py-2 text-center">
-            <div className="text-[10px] text-slate-500">{k}</div>
+            <div className="text-[11px] text-slate-500">{k}</div>
             <div className="truncate text-slate-200">{v}</div>
           </div>
         ))}

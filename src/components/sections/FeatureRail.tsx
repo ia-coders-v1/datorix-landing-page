@@ -73,7 +73,7 @@ export default function FeatureRail({ items }: { items: RailItem[] }) {
                 href={`#${item.id}`}
                 aria-current={current ? "true" : undefined}
                 className={cn(
-                  "flex items-center gap-2 h-8 px-3 rounded-full text-[13px] font-medium no-underline transition-colors duration-200",
+                  "flex items-center gap-2 h-10 px-3.5 rounded-full text-[13px] font-medium no-underline transition-colors duration-200",
                   current ? "bg-primary text-white" : "text-muted-foreground hover:text-primary hover:bg-secondary"
                 )}
               >

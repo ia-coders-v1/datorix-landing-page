@@ -44,8 +44,8 @@ function Counter({ value, text, suffix, label, decimal }: Stat) {
   }, [value, decimal]);
 
   return (
-    <div ref={ref} className="rounded-xl p-8 flex flex-col gap-2 text-center card-hover bg-surface-tonal">
-      <p className={`font-bold leading-none ${value === null ? "text-[32px] pt-[12px] pb-[12px]" : "text-[56px]"} text-primary tracking-[-1.5px]`}>
+    <div ref={ref} className="rounded-xl p-4 sm:p-8 min-w-0 flex flex-col gap-2 text-center card-hover bg-surface-tonal">
+      <p className={`font-bold leading-none break-words ${value === null ? "text-[18px] sm:text-[32px] py-[14px]" : "text-[40px] sm:text-[56px]"} text-primary tracking-[-1.5px]`}>
         {value === null ? text : decimal ? current.toFixed(2) : current}
         {value === null ? "" : suffix}
       </p>
@@ -67,7 +67,7 @@ export default function Stats() {
           <span className="text-accent-blue">check against the product</span>
         </h2>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-10">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-10">
           {stats.map((s) => (
             <Counter key={s.label} {...s} />
           ))}

@@ -3,21 +3,23 @@
 import { useEffect, useRef, useState } from "react";
 import { SectionLabel } from "@/components/ui/section-label";
 
-const stats = [
-  { value: 5,     suffix: "",    label: "Databases supported",           decimal: false },
-  { value: 99.99, suffix: "%",   label: "Uptime SLA",                    decimal: true  },
-  { value: 0,     suffix: "ms",  label: "Added query latency",           decimal: false },
-  { value: 100,   suffix: "%",   label: "Agentless — no server install", decimal: false },
+type Stat = { value: number | null; text?: string; suffix: string; label: string; decimal: boolean };
+
+const stats: Stat[] = [
+  { value: 80, suffix: "+", label: "SQL-injection rules built in", decimal: false },
+  { value: 3,  suffix: "",  label: "Capture paths: proxy, network sensor, audit collector", decimal: false },
+  { value: 4,  suffix: "",  label: "Replication target engines", decimal: false },
+  { value: null, text: "Linux + Windows", suffix: "", label: "Backup agents", decimal: false },
 ];
 
-function Counter({ value, suffix, label, decimal }: typeof stats[0]) {
+function Counter({ value, text, suffix, label, decimal }: Stat) {
   const [current, setCurrent] = useState(0);
   const ref = useRef<HTMLDivElement>(null);
   const started = useRef(false);
 
   useEffect(() => {
     const el = ref.current;
-    if (!el) return;
+    if (!el || value === null) return;
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting && !started.current) {
@@ -43,9 +45,9 @@ function Counter({ value, suffix, label, decimal }: typeof stats[0]) {
 
   return (
     <div ref={ref} className="rounded-xl p-8 flex flex-col gap-2 text-center card-hover bg-surface-tonal">
-      <p className="font-bold leading-none text-[56px] text-primary tracking-[-1.5px]">
-        {decimal ? current.toFixed(2) : current}
-        {suffix}
+      <p className={`font-bold leading-none ${value === null ? "text-[32px] pt-[12px] pb-[12px]" : "text-[56px]"} text-primary tracking-[-1.5px]`}>
+        {value === null ? text : decimal ? current.toFixed(2) : current}
+        {value === null ? "" : suffix}
       </p>
       <p className="text-sm text-muted-foreground">
         {label}
@@ -60,9 +62,9 @@ export default function Stats() {
       <div className="max-w-[1280px] mx-auto px-6">
         <SectionLabel>By the Numbers</SectionLabel>
         <h2 className="font-bold text-center mb-16 text-[clamp(28px,3.5vw,40px)] tracking-[-1.5px] text-primary">
-          Built for production-grade
+          Numbers you can
           <br />
-          <span className="text-accent-blue">database environments</span>
+          <span className="text-accent-blue">check against the product</span>
         </h2>
 
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-10">

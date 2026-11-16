@@ -5,36 +5,36 @@ const steps = [
     number: "01",
     title: "Capture",
     description:
-      "DPI captures all database traffic in real time — at the packet level, directly from the network. No agents required on the database server.",
-    detail: "Supports Oracle, EDB, MS SQL, MySQL & PostgreSQL.",
+      "An inline proxy, a network sensor and a read-only audit collector record database activity, with nothing installed on the database server.",
+    detail: "Oracle, MS SQL Server, MySQL & PostgreSQL.",
   },
   {
     number: "02",
-    title: "Analyze",
+    title: "Protect",
     description:
-      "Activities are parsed and enriched with full context: user identity, source IP, operation type, affected objects, and an automated risk score.",
-    detail: "Sub-millisecond analysis. No latency added to queries.",
+      "The firewall checks each query against built-in and custom rules, then blocks it, alerts the team or logs it.",
+    detail: "80+ SQL-injection patterns, live rule updates.",
   },
   {
     number: "03",
-    title: "Store",
+    title: "Record",
     description:
-      "Every event is written to secure, immutable, tamper-proof storage — preserving the complete audit trail for compliance and forensic investigations.",
-    detail: "Immutable log format with SHA-256 integrity hashing.",
+      "Every event is stored with who, what, when and where, in an append-only, tamper-evident audit trail.",
+    detail: "Searchable by action, user and time.",
   },
   {
     number: "04",
-    title: "Alert",
+    title: "Replicate",
     description:
-      "Real-time Email and SMS alerts fire the moment a policy violation or threat is detected. Integrate with your SIEM or incident management platform via webhook.",
-    detail: "Configurable severity levels and alert suppression.",
+      "Change data capture streams committed changes to another database, with table comparison to confirm both sides match.",
+    detail: "PostgreSQL, MySQL and Oracle sources.",
   },
   {
     number: "05",
-    title: "Report",
+    title: "Back up",
     description:
-      "Comprehensive dashboards and one-click compliance reports for SOX, HIPAA, GDPR, and PCI-DSS — ready for auditors with no manual evidence collection.",
-    detail: "Export as PDF, JSON, or CSV.",
+      "Agents on Linux and Windows hosts back up chosen folders on a schedule to storage you control, and restore on demand.",
+    detail: "Retention you set; restores are staged.",
   },
 ];
 
@@ -44,7 +44,7 @@ export default function HowItWorks() {
       <div className="max-w-[1280px] mx-auto px-6">
         <SectionLabel>How It Works</SectionLabel>
         <h2 className="font-bold text-center mb-16 text-[clamp(28px,3.5vw,40px)] tracking-[-1.5px] text-primary">
-          From packet to compliance report
+          From first query to safe restore
           <br />
           <span className="text-accent-blue">in five steps.</span>
         </h2>

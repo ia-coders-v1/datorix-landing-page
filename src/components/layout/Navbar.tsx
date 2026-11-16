@@ -14,9 +14,12 @@ import {
 import { cn } from "@/lib/utils";
 
 const navLinks = [
-  { label: "Products", href: "#products" },
+  { label: "Protect", href: "#protect" },
+  { label: "Replicate", href: "#replicate" },
+  { label: "Backup", href: "#backup" },
   { label: "How It Works", href: "#how-it-works" },
   { label: "Use Cases", href: "#use-cases" },
+  { label: "Roadmap", href: "#roadmap" },
 ];
 
 const datasheets = [

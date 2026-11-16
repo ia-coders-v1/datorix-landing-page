@@ -10,15 +10,15 @@ const problems = [
   },
   {
     icon: AlertTriangle,
-    title: "Compliance Gaps",
+    title: "Evidence Gaps",
     body:
-      "SOX, HIPAA, GDPR, and PCI-DSS all demand granular, immutable audit trails. Manual log reviews fail audits and expose you to severe regulatory fines.",
+      "Auditors expect to know who ran what, when and from where. Manual log reviews and mutable logs make that hard to prove.",
   },
   {
     icon: Ghost,
     title: "Bypass Blind Spots",
     body:
-      "Application-level controls are powerless against direct database connections and stolen service accounts. Without wire-level visibility, attacks remain completely invisible.",
+      "Application-level controls are powerless against direct database connections and stolen service accounts. Without a view of the network and of the database's own audit log, that activity stays invisible.",
   },
 ];
 

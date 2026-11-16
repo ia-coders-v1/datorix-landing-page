@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { ArrowRight, Terminal } from "lucide-react";
+import { benefits } from "@/lib/content";
 import { cn } from "@/lib/utils";
 
 const SQL_LINES = [
@@ -32,7 +33,7 @@ function CodeWindow() {
         <span className="w-3 h-3 rounded-full bg-accent-emerald" />
         <div className="ml-3 flex items-center gap-2 text-slate-500">
           <Terminal size={12} />
-          <span className="font-mono text-xs">datorix — dpi capture stream</span>
+          <span className="font-mono text-xs">datorix — live query stream</span>
         </div>
       </div>
 
@@ -81,20 +82,20 @@ export default function Hero() {
             <div>
               <span className="inline-flex items-center gap-2 font-semibold uppercase text-[11px] tracking-[1.5px] rounded-full px-3.5 py-1.5 bg-sky-50 border border-sky-300 text-sky-500">
                 <span className="w-1.5 h-1.5 rounded-full bg-accent-blue animate-pulse shrink-0" />
-                Database Activity Monitoring
+                Database security, replication and backup
               </span>
             </div>
 
             <h1 className="font-bold leading-[1.05] text-[clamp(40px,5vw,72px)] tracking-[-2.5px] text-primary">
-              See Everything.
+              Know every query.
               <br />
-              Secure Everything.
+              Protect every database.
               <br />
-              <span className="text-accent-blue">Total Control.</span>
+              <span className="text-accent-blue">Move your data safely.</span>
             </h1>
 
             <p className="leading-relaxed text-body max-w-130 text-lg">
-              Datorix DAM Platform delivers passive, agentless monitoring of all database activities in real time. Powered by Deep Packet Inspection — zero performance impact, complete visibility.
+              Datorix watches, protects, replicates and backs up your databases from one browser console. It works without installing anything on your database servers.
             </p>
 
             <div className="flex flex-wrap gap-3 mt-2">
@@ -112,30 +113,21 @@ export default function Hero() {
                 See How It Works
               </Link>
             </div>
-
-            {/* Inline stats */}
-            <div className="flex flex-wrap gap-8 mt-4 pt-8 border-t border-muted-soft">
-              {[
-                { value: "5", label: "Databases supported" },
-                { value: "99.99%", label: "Uptime SLA" },
-                { value: "0ms", label: "Added latency" },
-              ].map(({ value, label }) => (
-                <div key={label}>
-                  <p className="font-bold text-[28px] text-primary tracking-[-1px]">
-                    {value}
-                  </p>
-                  <p className="text-sm text-muted-foreground">
-                    {label}
-                  </p>
-                </div>
-              ))}
-            </div>
           </div>
 
           {/* Right — 5 cols */}
           <div className="lg:col-span-5">
             <CodeWindow />
           </div>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-16 pt-12 border-t border-muted-soft">
+          {benefits.map((b) => (
+            <div key={b.title} className="flex flex-col gap-2">
+              <h2 className="font-bold text-lg tracking-[-0.3px] text-primary">{b.title}</h2>
+              <p className="text-sm leading-relaxed text-muted-foreground">{b.body}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>

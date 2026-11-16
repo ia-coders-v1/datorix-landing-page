@@ -8,9 +8,9 @@ export const SITE_NAME = "Datorix";
 export const SITE_TITLE = "Datorix | Complete Data Vigilance";
 
 export const SITE_DESCRIPTION =
-  "Passive, agentless Database Activity Monitoring powered by Deep Packet Inspection. Complete visibility across Oracle, PostgreSQL, MySQL, SQL Server and EDB — with no performance overhead.";
+  "See, protect, replicate and back up your databases from one console. Datorix monitors every query, blocks dangerous SQL and moves data safely, with nothing installed on your database servers.";
 
-export const SITE_TAGLINE = "See Everything. Secure Everything. Total Control.";
+export const SITE_TAGLINE = "Know every query. Protect every database. Move your data safely.";
 
 export const TWITTER_HANDLE = "@datorix";
 

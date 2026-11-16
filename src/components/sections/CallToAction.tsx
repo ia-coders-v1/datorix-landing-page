@@ -20,15 +20,15 @@ export default function CallToAction() {
       <div className="max-w-[1280px] mx-auto px-6">
         <div className="rounded-xl px-8 py-16 text-center flex flex-col items-center gap-6 bg-primary">
           <p className="font-semibold uppercase tracking-[1.5px] text-xs text-muted-soft">
-            Get Started
+            Get started
           </p>
 
           <h2 className="font-bold text-[clamp(28px,3.5vw,40px)] tracking-[-1.5px] text-white max-w-[560px]">
-            Start monitoring your database in minutes.
+            Run your databases with confidence.
           </h2>
 
           <p className="text-base text-muted-soft max-w-[440px]">
-            No agents. No schema changes. Deploy Guardian Proxy or Watcher Sniffer and see your first query log in under 5 minutes.
+            One console for what your databases do, who touches them and where the data goes.
           </p>
 
           {!submitted ? (
@@ -45,7 +45,7 @@ export default function CallToAction() {
                 type="submit"
                 className="flex items-center gap-2 shrink-0 font-semibold h-11 px-6 rounded-md border-0 text-sm bg-accent-blue hover:bg-sky-500 text-primary transition-all duration-150 hover:-translate-y-0.5 hover:shadow-md active:scale-[0.98]"
               >
-                Get Early Access
+                Request a demo
                 <ArrowRight size={15} />
               </Button>
             </form>
@@ -55,9 +55,13 @@ export default function CallToAction() {
             </div>
           )}
 
-          <p className="text-xs text-muted-foreground">
-            No credit card required. Free during beta.
-          </p>
+          <a
+            href="/docs/datorix_enterprise_datasheet_DAM.pdf"
+            download
+            className="text-sm font-medium underline underline-offset-4 text-muted-soft hover:text-white"
+          >
+            Download the datasheet
+          </a>
         </div>
       </div>
     </section>

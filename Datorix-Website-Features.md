@@ -8,9 +8,9 @@
 
 ## Hero
 
-# Know every query. Protect every database. Turn it all into insight.
+# Know every query. Protect every database. Move your data safely.
 
-Datorix watches, protects, replicates and backs up your databases from one browser console, then (soon) feeds the data into your lakehouse for analytics at scale. It works without installing anything on your database servers.
+Datorix watches, protects, replicates and backs up your databases from one browser console. It works without installing anything on your database servers.
 
 | | |
 |---|---|
@@ -190,7 +190,7 @@ Run it on your own infrastructure so your data never leaves your control.
 ---
 ## Roadmap
 
-Planned work, in two blocks. None of this is available yet.
+Planned work, in three blocks. None of this is available yet.
 
 ### Connect all your data **[Coming soon]**
 
@@ -237,6 +237,8 @@ Analytics run in your own Databricks workspace under your own access controls.
 
 
 ### More alert channels **[Coming soon]**
+
+Meet your team where it already works.
 
 **Slack and PagerDuty**
 Send alerts to the chat and on-call tools your team already uses.

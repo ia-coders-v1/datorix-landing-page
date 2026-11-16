@@ -14,9 +14,11 @@ import {
 import { cn } from "@/lib/utils";
 
 const navLinks = [
-  { label: "Products", href: "#products" },
-  { label: "How It Works", href: "#how-it-works" },
+  { label: "Protect", href: "#protect" },
+  { label: "Replicate", href: "#replicate" },
+  { label: "Backup", href: "#backup" },
   { label: "Use Cases", href: "#use-cases" },
+  { label: "Roadmap", href: "#roadmap" },
 ];
 
 const datasheets = [
@@ -45,22 +47,19 @@ export default function Navbar() {
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 h-16 border-b border-border transition-colors duration-200"
+        "fixed top-0 left-0 right-0 z-50 h-16 border-b border-border transition-colors duration-200",
+        open && "bg-white",
+        scrolled && "bg-white"
       )}
     >
-      <div
-        className={cn(
-          "max-w-7xl mx-auto px-6 h-full flex items-center justify-between",
-          scrolled ? "bg-white backdrop-blur-2xl" : ""
-        )}
-      >
+      <div className="max-w-7xl mx-auto px-6 h-full flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center shrink-0">
           <Image src="/logo.png" alt="Datorix" height={28} width={188} className="block" unoptimized />
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-6">
+        <nav className="hidden lg:flex items-center gap-6">
           {navLinks.map((link) => (
             <Link
               key={link.href}
@@ -94,7 +93,7 @@ export default function Navbar() {
         </nav>
 
         {/* CTA */}
-        <div className="hidden md:flex items-center gap-3">
+        <div className="hidden lg:flex items-center gap-3">
           <Link
             href="#cta"
             className={cn(
@@ -108,7 +107,7 @@ export default function Navbar() {
 
         {/* Mobile hamburger */}
         <button
-          className="md:hidden p-2 text-primary"
+          className="lg:hidden -mr-2.5 p-2.5 text-primary"
           onClick={() => setOpen(!open)}
           aria-label="Toggle menu"
         >
@@ -118,19 +117,19 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {open && (
-        <div className="md:hidden px-6 pb-6 flex flex-col gap-4 bg-white border-b border-border">
+        <div className="lg:hidden px-6 pb-6 flex flex-col gap-1 bg-white border-b border-border max-h-[calc(100dvh-4rem)] overflow-y-auto">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
               onClick={() => setOpen(false)}
-              className="text-sm font-medium text-body"
+              className="text-sm font-medium text-body py-2.5"
             >
               {link.label}
             </Link>
           ))}
 
-          <div className="flex flex-col gap-3 pt-3 border-t border-border">
+          <div className="flex flex-col gap-1 pt-3 mt-2 border-t border-border">
             <span className="text-xs font-semibold uppercase tracking-[1.5px] text-muted-soft">
               Resources
             </span>
@@ -142,7 +141,7 @@ export default function Navbar() {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setOpen(false)}
-                className="text-sm font-medium text-body"
+                className="text-sm font-medium text-body py-2.5"
               >
                 {sheet.label}
               </a>
@@ -152,7 +151,7 @@ export default function Navbar() {
           <Link
             href="#cta"
             onClick={() => setOpen(false)}
-            className="flex items-center justify-center h-10 rounded-md text-sm font-semibold bg-primary hover:bg-primary-active text-white no-underline transition-all duration-150 active:scale-[0.98]"
+            className="mt-3 flex items-center justify-center h-11 rounded-md text-sm font-semibold bg-primary hover:bg-primary-active text-white no-underline transition-all duration-150 active:scale-[0.98]"
           >
             Get Started
           </Link>

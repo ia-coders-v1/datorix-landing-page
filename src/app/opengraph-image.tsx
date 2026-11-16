@@ -1,8 +1,8 @@
 import { ImageResponse } from "next/og";
-import { SITE_NAME, SITE_TAGLINE, SITE_DESCRIPTION } from "@/lib/site";
+import { SITE_NAME, SITE_TAGLINE, SITE_SUMMARY } from "@/lib/site";
 
 export const dynamic = "force-static";
-export const alt = "Datorix — Database Activity Monitoring";
+export const alt = "Datorix — Database security, replication and backup";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -48,7 +48,7 @@ export default function OpengraphImage() {
             {SITE_TAGLINE}
           </div>
           <div style={{ color: "#64748b", fontSize: "28px", lineHeight: 1.3 }}>
-            {`${SITE_DESCRIPTION.split(".")[0]}.`}
+            {SITE_SUMMARY}
           </div>
         </div>
 
@@ -64,7 +64,7 @@ export default function OpengraphImage() {
             borderRadius: "9999px",
           }}
         >
-          Database Activity Monitoring
+          Database security, replication and backup
         </div>
       </div>
     ),

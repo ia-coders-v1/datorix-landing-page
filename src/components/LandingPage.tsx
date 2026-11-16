@@ -2,8 +2,9 @@ import { Navbar, Footer } from "./layout";
 import {
   Hero,
   Problem,
-  Features,
-  HowItWorks,
+  FeatureSections,
+  Roadmap,
+  TechStrip,
   Databases,
   UseCases,
   Stats,
@@ -17,11 +18,12 @@ export default function LandingPage() {
       <main>
         <Hero />
         <Problem />
-        <Features />
-        <HowItWorks />
+        <FeatureSections />
+        <Roadmap />
         <Databases />
         <UseCases />
         <Stats />
+        <TechStrip />
         <CallToAction />
       </main>
       <Footer />

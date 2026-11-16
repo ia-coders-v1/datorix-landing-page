@@ -40,7 +40,7 @@ export const metadata: Metadata = {
       { rel: "mask-icon", url: "/favicon.svg" },
     ],
   },
-  keywords: ["database activity monitoring", "DAM", "deep packet inspection", "DPI", "data security", "SQL audit", "SOX", "HIPAA", "GDPR", "PCI-DSS"],
+  keywords: ["database activity monitoring", "DAM", "database firewall", "data replication", "change data capture", "file backup", "SQL audit", "data security"],
   authors: [{ name: SITE_NAME }],
   alternates: { canonical: "/" },
   openGraph: {
@@ -80,8 +80,7 @@ const jsonLd = {
       applicationCategory: "SecurityApplication",
       operatingSystem: "Web",
       description:
-        "Real-time SQL firewall, bypass detection, and compliance analytics for your database fleet.",
-      offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+        "Real-time SQL firewall, bypass detection, audit trail, replication and backup for your database fleet.",
       url: SITE_URL,
       publisher: { "@id": `${SITE_URL}/#organization` },
     },

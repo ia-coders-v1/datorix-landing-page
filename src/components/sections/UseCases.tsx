@@ -8,21 +8,21 @@ const cases = [
     persona: "Security Engineer",
     headline: "Enhanced Security",
     points: [
-      "Detect suspicious activities and prevent data breaches with real-time DPI monitoring",
-      "Block SQL injection, privilege escalation, and direct DB connections at the wire level",
-      "Correlate database events with your SIEM for unified threat hunting",
-      "Forensic investigation tools to quickly identify root cause of any incident",
+      "See app traffic, bypass attempts and sessions on the database host itself",
+      "Block SQL injection and dangerous commands before they run",
+      "Set your own rules by user, IP, table or time of day",
+      "Score user risk and spot unusual access across your databases",
     ],
   },
   {
     icon: ClipboardCheck,
     persona: "Compliance Officer",
-    headline: "Compliance Made Easy",
+    headline: "Evidence You Can Prove",
     points: [
-      "Meet SOX, HIPAA, GDPR, and PCI-DSS requirements with complete, immutable audit trails",
-      "Pre-built compliance dashboards — no manual evidence collection",
-      "One-click report generation for auditors and regulators",
-      "Tamper-proof log storage with SHA-256 integrity hashing",
+      "An append-only, tamper-evident record of who did what, and when",
+      "Native engine audit trails for activity that never touches the network",
+      "Search and filter the trail by action, user and time",
+      "Every replication and backup job on record",
     ],
     featured: true,
   },
@@ -31,17 +31,17 @@ const cases = [
     persona: "DBA",
     headline: "Operational Efficiency",
     points: [
-      "Monitor and manage all database activities with full transaction visibility",
-      "Identify performance issues, full-table scans, and missing indexes in real time",
-      "Per-user and per-application query fingerprinting — no more guessing",
-      "Zero-change deployment — no schema migrations, no server-side agents",
+      "Search every query with its duration and the rows it touched",
+      "Throughput, latency percentiles and IOPS per database",
+      "Replicate and back up from the same console",
+      "Nothing installed on your database servers",
     ],
   },
 ];
 
 export default function UseCases() {
   return (
-    <section id="use-cases" className="bg-background pt-24 pb-24">
+    <section id="use-cases" className="scroll-mt-20 bg-background py-16 sm:py-24">
       <div className="max-w-[1280px] mx-auto px-6">
         <SectionLabel>Use Cases</SectionLabel>
         <h2 className="font-bold text-center mb-16 text-[clamp(28px,3.5vw,40px)] tracking-[-1.5px] text-primary">

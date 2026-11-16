@@ -82,7 +82,7 @@ export default function Hero() {
             <div>
               <span className="inline-flex items-center gap-2 font-semibold uppercase text-[11px] tracking-[1.5px] rounded-full px-3.5 py-1.5 bg-sky-50 border border-sky-300 text-sky-500">
                 <span className="w-1.5 h-1.5 rounded-full bg-accent-blue animate-pulse shrink-0" />
-                Database security, replication and backup
+                Complete data vigilance
               </span>
             </div>
 

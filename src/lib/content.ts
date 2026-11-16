@@ -31,7 +31,7 @@ export const featureSections: FeatureSection[] = [
     tagline: "Complete visibility into what happens inside your databases, with nothing installed on them.",
     cards: [
       { title: "Live query stream", body: "Watch queries arrive in real time. Filter by user, source, level or time, and open any entry to read the full statement." },
-      { title: "Three ways of seeing", body: "An inline proxy sees app traffic. A network sensor sees traffic that goes around the proxy. A read-only audit collector sees what the database itself logged, including a DBA working locally with no network traffic at all." },
+      { title: "Three ways of seeing", body: "An inline proxy sees app traffic. A network sensor sees traffic that goes around the proxy. A credential-based audit collector, using a read-only database login, sees what the database itself logged, including a DBA working locally with no network traffic at all." },
       { title: "Bypass detection", body: "Know when someone connects straight to the database instead of through the approved path, and who they are." },
       { title: "Nothing on your database servers", body: "Datorix connects with a read-only login and reads the network. No agents or daemons on the database host, and no performance hit on it." },
       { title: "Query Explorer", body: "Search every captured query. See who ran it, from where, how long it took, how many rows it touched and whether it was blocked." },
@@ -147,11 +147,6 @@ export const roadmapBlocks: RoadmapBlock[] = [
       { title: "Bring your own analysis", body: "Use notebooks and SQL on the same data, or connect your BI and ML tools." },
       { title: "Your data stays in your platform", body: "Analytics run in your own Databricks workspace under your own access controls." },
     ],
-  },
-  {
-    title: "More alert channels",
-    tagline: "Meet your team where it already works.",
-    cards: [{ title: "Slack and PagerDuty", body: "Send alerts to the chat and on-call tools your team already uses." }],
   },
 ];
 

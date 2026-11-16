@@ -71,7 +71,7 @@ for (const [name, re] of forbidden) {
 if (/databricks|spark/i.test(metaText)) fail("metadata mentions Databricks or Spark");
 
 // 2. Anchors: required ids exist, every in-page href resolves, every section has an h2.
-const ids = ["see", "protect", "data", "audit", "replicate", "backup", "operate", "roadmap", "how-it-works", "use-cases", "cta"];
+const ids = ["see", "protect", "data", "audit", "replicate", "backup", "operate", "roadmap", "use-cases", "cta"];
 for (const id of ids) {
   const sec = sectionHtml(id);
   if (sec === null) fail(`missing section id: ${id}`);
@@ -81,12 +81,12 @@ for (const m of page.matchAll(/href="#([^"]+)"/g)) {
   if (!new RegExp(`id="${m[1]}"`).test(page)) fail(`href="#${m[1]}" points at no id`);
 }
 
-// 3. "Coming soon" only inside #roadmap, at least three times.
+// 3. "Coming soon" only inside #roadmap, at least twice.
 const road = sectionHtml("roadmap") ?? "";
 const outside = road ? page.replace(road, "") : page;
 const count = (s) => (textOf(s).match(/coming soon/gi) ?? []).length;
 if (count(outside) > 0) fail(`"Coming soon" appears outside #roadmap (${count(outside)}x)`);
-if (count(road) < 3) fail(`#roadmap has ${count(road)} "Coming soon" badges, expected at least 3`);
+if (count(road) < 2) fail(`#roadmap has ${count(road)} "Coming soon" badges, expected at least 2`);
 
 // 4. Exactly one h1.
 const h1 = (page.match(/<h1[\s>]/g) ?? []).length;

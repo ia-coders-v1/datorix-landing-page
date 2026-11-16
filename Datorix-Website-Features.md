@@ -29,7 +29,7 @@ Complete visibility into what happens inside your databases, with nothing instal
 Watch queries arrive in real time. Filter by user, source, level or time, and open any entry to read the full statement.
 
 **Three ways of seeing**
-An inline proxy sees app traffic. A network sensor sees traffic that goes around the proxy. A read-only audit collector sees what the database itself logged, including a DBA working locally with no network traffic at all.
+An inline proxy sees app traffic. A network sensor sees traffic that goes around the proxy. A credential-based audit collector, using a read-only database login, sees what the database itself logged, including a DBA working locally with no network traffic at all.
 
 **Bypass detection**
 Know when someone connects straight to the database instead of through the approved path, and who they are.
@@ -190,7 +190,7 @@ Run it on your own infrastructure so your data never leaves your control.
 ---
 ## Roadmap
 
-Planned work, in three blocks. None of this is available yet.
+Planned work, in two blocks. None of this is available yet.
 
 ### Connect all your data **[Coming soon]**
 
@@ -236,13 +236,6 @@ Use notebooks and SQL on the same data, or connect your BI and ML tools.
 Analytics run in your own Databricks workspace under your own access controls.
 
 
-### More alert channels **[Coming soon]**
-
-Meet your team where it already works.
-
-**Slack and PagerDuty**
-Send alerts to the chat and on-call tools your team already uses.
-
 ---
 
 
@@ -276,5 +269,5 @@ Facts below came from the repo (`datamon-replication-runtime`, `datamon-target-c
    Fix these in the page code, or the new copy will contradict them.
 3. **Compliance reports, RegTech, policy-as-smart-contract, threat-intelligence mining and every SIEM mention are removed** on purpose (see `docs/adr/0001-restructure-landing-page-around-verifiable-capabilities.md`).
 4. **Windows restore** is implemented but not yet lab-verified, and Windows backup has been tested only on Windows 10. This copy says "Linux and Windows agents" but does not promise more.
-5. **Email and SMS alerts** are listed as planned (not done) in the June inventory, as are Slack and PagerDuty. Confirm Email and SMS ship today before keeping the unmarked card.
+5. **Email and SMS alerts** are listed as planned (not done) in the June inventory. Confirm Email and SMS ship today before keeping the unmarked card.
 6. **Tamper-evident (immudb) storage** comes from `PRODUCT.md`. Confirm it is the live audit store before keeping that claim.

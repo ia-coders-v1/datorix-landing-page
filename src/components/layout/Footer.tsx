@@ -7,7 +7,6 @@ type FooterLink = { label: string; href: string; download?: boolean };
 const footerLinks: Record<string, FooterLink[]> = {
   Product: [
     { label: "Features", href: "#see" },
-    { label: "How It Works", href: "#how-it-works" },
     { label: "Use Cases", href: "#use-cases" },
     { label: "Roadmap", href: "#roadmap" },
   ],

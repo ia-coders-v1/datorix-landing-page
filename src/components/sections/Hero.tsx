@@ -74,7 +74,7 @@ function CodeWindow() {
 
 export default function Hero() {
   return (
-    <section className="bg-background pt-40 pb-24">
+    <section className="bg-background pt-40 pb-[77px]">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Left — 7 cols */}
@@ -107,10 +107,10 @@ export default function Hero() {
                 <ArrowRight size={16} />
               </Link>
               <Link
-                href="#how-it-works"
+                href="#see"
                 className="flex items-center font-semibold text-sm h-11 px-6 rounded-md no-underline bg-transparent text-primary border border-primary hover: transition-all duration-150 hover:-translate-y-0.5 hover:shadow-sm active:scale-[0.98]"
               >
-                See How It Works
+                Explore capabilities
               </Link>
             </div>
           </div>

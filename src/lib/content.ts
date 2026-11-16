@@ -84,7 +84,7 @@ export const featureSections: FeatureSection[] = [
     id: "replicate",
     label: "Replication",
     title: "Replicate in real time",
-    tagline: "Move changes between databases as they happen, with a record of every move.",
+    tagline: "Data integration in real time: move changes between databases as they happen, with a record of every move.",
     cards: [
       { title: "Change data capture", body: "Reads the database's own transaction log. No triggers and no schema changes, and almost no load on the source." },
       { title: "Snapshot, live changes, or both", body: "Copy what is there now, follow what changes next, or do both in one job." },

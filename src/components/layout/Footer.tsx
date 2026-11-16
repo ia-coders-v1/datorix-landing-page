@@ -37,7 +37,7 @@ export default function Footer() {
           {/* Brand + contact */}
           <div className="col-span-2">
             <div className="mb-4">
-              <Image src="/logo.png" alt="Datorix" height={28} width={188} className="block" unoptimized />
+              <Image src="/logo.svg" alt="Datorix" height={28} width={188} className="block" unoptimized />
             </div>
             <p className="text-sm leading-relaxed mb-4 text-muted-foreground max-w-[220px]">
               Database security, replication and backup from one console.

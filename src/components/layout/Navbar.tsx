@@ -55,7 +55,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-6 h-full flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center shrink-0">
-          <Image src="/logo.png" alt="Datorix" height={28} width={188} className="block" unoptimized />
+          <Image src="/logo.svg" alt="Datorix" height={28} width={188} className="block" unoptimized />
         </Link>
 
         {/* Desktop nav */}

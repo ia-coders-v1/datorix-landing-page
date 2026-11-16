@@ -119,7 +119,7 @@ Click an event to see its full context: statement, user, source, object and the 
 
 ## Replicate in real time
 
-Move changes between databases as they happen, with a record of every move.
+Data integration in real time: move changes between databases as they happen, with a record of every move.
 
 **Change data capture**
 Reads the database's own transaction log. No triggers and no schema changes, and almost no load on the source.

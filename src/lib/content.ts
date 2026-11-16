@@ -149,5 +149,3 @@ export const roadmapBlocks: RoadmapBlock[] = [
     ],
   },
 ];
-
-export const techStrip = ["Kafka", "ClickHouse", "PostgreSQL", "Debezium", "Keycloak", "Kubernetes", "restic", "Next.js"];

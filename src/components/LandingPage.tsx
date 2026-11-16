@@ -4,7 +4,6 @@ import {
   Problem,
   FeatureSections,
   Roadmap,
-  TechStrip,
   Databases,
   UseCases,
   Stats,
@@ -23,7 +22,6 @@ export default function LandingPage() {
         <Databases />
         <UseCases />
         <Stats />
-        <TechStrip />
         <CallToAction />
       </main>
       <Footer />

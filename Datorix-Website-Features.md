@@ -1,6 +1,6 @@
 # DATORIX — Website Features
 
-> Feature copy for the promotional landing page, in the same shape as the Cephron features sheet: a hero, a row of four headline benefits, then sections of six plain-language feature cards, a tech strip and a closing call to action.
+> Feature copy for the promotional landing page, in the same shape as the Cephron features sheet: a hero, a row of four headline benefits, then sections of six plain-language feature cards, and a closing call to action.
 >
 > **Status tags:** unmarked = shipped in the current build. **[Coming soon]** = planned and not built yet. Keep the tag visible on the site (badge or footnote) so the page promises nothing the product doesn't do yet.
 
@@ -238,14 +238,6 @@ Analytics run in your own Databricks workspace under your own access controls.
 
 ---
 
-
-## Built on proven open technology
-
-Datorix brings well-known building blocks together behind one simple interface.
-
-Kafka · ClickHouse · PostgreSQL · Debezium · Keycloak · Kubernetes · restic · Next.js
-
----
 
 ## Closing call to action
 

@@ -5,5 +5,4 @@ export { default as Roadmap } from "./Roadmap";
 export { default as Databases } from "./Databases";
 export { default as UseCases } from "./UseCases";
 export { default as Stats } from "./Stats";
-export { default as TechStrip } from "./TechStrip";
 export { default as CallToAction } from "./CallToAction";

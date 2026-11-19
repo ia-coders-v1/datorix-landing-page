@@ -12,5 +12,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 1,
     },
+    ...["request-demo", "privacy", "eula"].map((slug) => ({
+      url: `${SITE_URL}/${slug}/`,
+      lastModified: new Date("2026-11-19"),
+      changeFrequency: "yearly" as const,
+      priority: slug === "request-demo" ? 0.8 : 0.3,
+    })),
   ];
 }

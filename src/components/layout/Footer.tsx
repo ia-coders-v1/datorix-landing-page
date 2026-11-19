@@ -6,9 +6,9 @@ type FooterLink = { label: string; href: string; download?: boolean };
 
 const footerLinks: Record<string, FooterLink[]> = {
   Product: [
-    { label: "Features", href: "#see" },
-    { label: "Use Cases", href: "#use-cases" },
-    { label: "Roadmap", href: "#roadmap" },
+    { label: "Features", href: "/#see" },
+    { label: "Use Cases", href: "/#use-cases" },
+    { label: "Roadmap", href: "/#roadmap" },
   ],
   Resources: [
     { label: "DAM Datasheet", href: "/docs/datorix_enterprise_datasheet_DAM.pdf", download: true },
@@ -22,8 +22,8 @@ const footerLinks: Record<string, FooterLink[]> = {
     { label: "Careers", href: "#" },
   ],
   Legal: [
-    { label: "Privacy Policy", href: "#" },
-    { label: "Terms of Service", href: "#" },
+    { label: "Privacy Policy", href: "/privacy/" },
+    { label: "EULA", href: "/eula/" },
     { label: "Security", href: "#" },
   ],
 };

@@ -14,11 +14,11 @@ import {
 import { cn } from "@/lib/utils";
 
 const navLinks = [
-  { label: "Protect", href: "#protect" },
-  { label: "Replicate", href: "#replicate" },
-  { label: "Backup", href: "#backup" },
-  { label: "Use Cases", href: "#use-cases" },
-  { label: "Roadmap", href: "#roadmap" },
+  { label: "Protect", href: "/#protect" },
+  { label: "Replicate", href: "/#replicate" },
+  { label: "Backup", href: "/#backup" },
+  { label: "Use Cases", href: "/#use-cases" },
+  { label: "Roadmap", href: "/#roadmap" },
 ];
 
 const datasheets = [
@@ -95,7 +95,7 @@ export default function Navbar() {
         {/* CTA */}
         <div className="hidden lg:flex items-center gap-3">
           <Link
-            href="#cta"
+            href="/request-demo/"
             className={cn(
               buttonVariants({ variant: "default" }),
               "inline-flex items-center h-10 px-5 rounded-md border-0 text-sm font-semibold bg-primary hover:bg-primary-active text-white transition-all duration-150 hover:-translate-y-0.5 hover:shadow-md active:scale-[0.98]"
@@ -149,7 +149,7 @@ export default function Navbar() {
           </div>
 
           <Link
-            href="#cta"
+            href="/request-demo/"
             onClick={() => setOpen(false)}
             className="mt-3 flex items-center justify-center h-11 rounded-md text-sm font-semibold bg-primary hover:bg-primary-active text-white no-underline transition-all duration-150 active:scale-[0.98]"
           >

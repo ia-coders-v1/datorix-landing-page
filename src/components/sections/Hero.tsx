@@ -100,7 +100,7 @@ export default function Hero() {
 
             <div className="flex flex-wrap gap-3 mt-2">
               <Link
-                href="#cta"
+                href="/request-demo/"
                 className="flex items-center gap-2 font-semibold text-sm h-11 px-6 rounded-md no-underline bg-primary hover:bg-primary-active text-white transition-all duration-150 hover:-translate-y-0.5 hover:shadow-md active:scale-[0.98]"
               >
                 Request a Demo

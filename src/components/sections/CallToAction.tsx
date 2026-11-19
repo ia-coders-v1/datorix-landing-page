@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 export default function CallToAction() {
@@ -16,13 +17,13 @@ export default function CallToAction() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-3 mt-2">
-            <a
-              href="mailto:info@datorix.ai?subject=Datorix%20demo%20request"
-              className="flex items-center justify-center gap-2 shrink-0 font-semibold h-11 px-6 rounded-md text-sm bg-accent-blue hover:bg-sky-500 text-primary transition-all duration-150 hover:-translate-y-0.5 hover:shadow-md active:scale-[0.98]"
+            <Link
+              href="/request-demo/"
+              className="flex items-center justify-center gap-2 shrink-0 font-semibold h-11 px-6 rounded-md text-sm text-white bg-cta hover:bg-cta-hover no-underline transition-all duration-150 hover:-translate-y-0.5 hover:shadow-md active:scale-[0.98]"
             >
               Request a demo
               <ArrowRight size={15} />
-            </a>
+            </Link>
             <a
               href="/docs/datorix_enterprise_datasheet_DAM.pdf"
               download

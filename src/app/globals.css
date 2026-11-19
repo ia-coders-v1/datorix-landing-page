@@ -23,6 +23,8 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
   --color-destructive: var(--destructive);
+  --color-cta: var(--cta);
+  --color-cta-hover: var(--cta-hover);
   --color-primary-active: var(--primary-active);
   --color-primary-disabled: var(--primary-disabled);
   --color-hairline: var(--hairline);
@@ -48,6 +50,10 @@
   --primary-active:    #0a1838;
   --primary-disabled:  #cbd5e1;
   --primary-foreground: #ffffff;
+
+  /* Call-to-action fill for buttons placed on a --primary surface (white text, 5:1 contrast) */
+  --cta:               #2563eb;
+  --cta-hover:         #1d4ed8;
 
   /* Surfaces */
   --background:        #f8fafc;

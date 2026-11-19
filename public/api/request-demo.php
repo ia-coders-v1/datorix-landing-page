@@ -7,7 +7,7 @@
 declare(strict_types=1);
 
 const MAIL_TO = 'sales@datorix.ai';
-const MAIL_FROM = 'noreply@datorix.ai';
+const MAIL_FROM = 'demo@datorix.ai';
 const ALLOWED_ORIGINS = ['https://datorix.ai', 'https://www.datorix.ai'];
 const DATABASE_OPTIONS = ['Oracle', 'MySQL', 'PostgreSQL', 'SQL Server', 'ClickHouse', 'Other'];
 const RATE_LIMIT = 5;          // submissions

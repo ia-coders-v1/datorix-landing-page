@@ -25,7 +25,7 @@ Datorix gives you one browser console to watch, protect, replicate and back up y
 
 It works without installing anything on your database servers.
 
-**[Request a demo](https://datorix.ai/request-demo/)**
+**[Get started](https://datorix.ai/onboarding/)**
 
 Best regards,
 {{sender_name}}
@@ -41,7 +41,7 @@ You are receiving this because {{reason, e.g. "you asked to hear from us" or "yo
 
 ## Before you send
 
-- **Consent:** the demo form consents only to a reply about the demo. Do not add demo requesters to a promotional list unless they opted in separately.
+- **Consent:** the onboarding form consents only to a reply about onboarding. Do not add onboarding requesters to a promotional list unless they opted in separately.
 - **Recipients:** send only to people who opted in, or where the law of their country allows business-to-business email. Check this per country in APAC.
 - **Unsubscribe:** every mail needs a working one-click link, and removals must be honoured within days, not months.
 - **Footer:** keep the sender identity, postal address and reason-for-receiving line. Several APAC laws and CAN-SPAM require them.

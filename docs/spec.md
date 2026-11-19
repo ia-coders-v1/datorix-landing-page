@@ -33,7 +33,7 @@ Rebuild the page as stacked sections, each with a heading, a tagline and a 6-car
 17. As a visitor on a phone, I want every section to lay out in one column with no horizontal scroll, so that the page is readable.
 18. As a visitor in dark or light mode, I want the new sections to follow the existing theme, so that the page looks consistent.
 19. As someone sharing the link, I want the page title, description and social preview to describe the whole platform, so that the shared card matches the page.
-20. As a visitor, I want the datasheet links and the closing call to action to still work, so that I can request a demo or download material.
+20. As a visitor, I want the datasheet links and the closing call to action to still work, so that I can get started or download material.
 21. As a maintainer, I want a repeatable check that removed claims have not returned, so that marketing edits cannot reintroduce them.
 22. As a maintainer, I want the features md to match the page, so that there is one source of truth for the copy.
 23. As a search engine, I want a single h1 and a logical heading order, so that the page is indexed correctly.

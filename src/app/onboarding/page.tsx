@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import { Navbar, Footer } from "@/components/layout";
-import DemoRequestForm from "@/components/DemoRequestForm";
+import OnboardingRequestForm from "@/components/OnboardingRequestForm";
 
 export const metadata: Metadata = {
-  title: "Request a demo",
-  description: "Tell us about your databases and we will arrange a Datorix demo.",
-  alternates: { canonical: "/request-demo/" },
+  title: "Get started",
+  description: "Tell us about your databases and we will get you started with Datorix.",
+  alternates: { canonical: "/onboarding/" },
 };
 
 const steps = [
@@ -14,14 +14,14 @@ const steps = [
   { title: "See it on your own scenarios", body: "We walk through monitoring, protection, replication and backup." },
 ];
 
-export default function RequestDemoPage() {
+export default function OnboardingPage() {
   return (
     <>
       <Navbar />
       <main className="bg-background pt-28 pb-20 sm:pt-32 sm:pb-28">
         <div className="mx-auto grid max-w-[1280px] gap-12 px-6 lg:grid-cols-12 lg:gap-16">
           <div className="flex flex-col gap-6 lg:col-span-5">
-            <p className="text-xs font-semibold uppercase tracking-[1.5px] text-muted-text">Request a demo</p>
+            <p className="text-xs font-semibold uppercase tracking-[1.5px] text-muted-text">Get started</p>
             <h1 className="text-[clamp(30px,4vw,44px)] font-bold leading-[1.1] tracking-[-1.5px] text-primary">
               See Datorix on your databases.
             </h1>
@@ -44,7 +44,7 @@ export default function RequestDemoPage() {
           </div>
 
           <div className="lg:col-span-7">
-            <DemoRequestForm />
+            <OnboardingRequestForm />
           </div>
         </div>
       </main>

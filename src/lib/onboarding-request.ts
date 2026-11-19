@@ -1,11 +1,11 @@
-// Shared by the demo request form (client) and documented against
-// public/api/request-demo.php, which re-validates everything server-side.
+// Shared by the onboarding request form (client) and documented against
+// public/api/onboarding.php, which re-validates everything server-side.
 
-export const DEMO_ENDPOINT = "/api/request-demo.php";
+export const ONBOARDING_ENDPOINT = "/api/onboarding.php";
 
 export const DATABASE_OPTIONS = ["Oracle", "MySQL", "PostgreSQL", "SQL Server", "ClickHouse", "Other"] as const;
 
-export type DemoRequestInput = {
+export type OnboardingRequestInput = {
   name: string;
   email: string;
   company: string;
@@ -15,11 +15,11 @@ export type DemoRequestInput = {
   consent: boolean;
 };
 
-export type FieldErrors = Partial<Record<keyof DemoRequestInput, string>>;
+export type FieldErrors = Partial<Record<keyof OnboardingRequestInput, string>>;
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
-export function validateDemoRequest(v: DemoRequestInput): FieldErrors {
+export function validateOnboardingRequest(v: OnboardingRequestInput): FieldErrors {
   const errors: FieldErrors = {};
   const name = v.name.trim();
   const company = v.company.trim();

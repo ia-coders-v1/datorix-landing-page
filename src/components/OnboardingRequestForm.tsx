@@ -5,11 +5,11 @@ import Link from "next/link";
 import { ArrowRight, CheckCircle2, Loader2 } from "lucide-react";
 import {
   DATABASE_OPTIONS,
-  DEMO_ENDPOINT,
-  validateDemoRequest,
-  type DemoRequestInput,
+  ONBOARDING_ENDPOINT,
+  validateOnboardingRequest,
+  type OnboardingRequestInput,
   type FieldErrors,
-} from "@/lib/demo-request";
+} from "@/lib/onboarding-request";
 import { PRIVACY_POLICY_VERSION, SALES_EMAIL } from "@/lib/legal";
 import { cn } from "@/lib/utils";
 
@@ -18,7 +18,7 @@ type Status = "idle" | "submitting" | "success" | "error";
 const fieldClass =
   "h-11 w-full rounded-md border border-hairline-strong bg-white px-3 text-sm text-body-strong placeholder:text-muted-soft outline-none transition-colors focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/40 aria-invalid:border-destructive aria-invalid:ring-3 aria-invalid:ring-destructive/20";
 
-const emptyForm: DemoRequestInput = {
+const emptyForm: OnboardingRequestInput = {
   name: "",
   email: "",
   company: "",
@@ -57,8 +57,8 @@ function Field({
   );
 }
 
-export default function DemoRequestForm() {
-  const [form, setForm] = useState<DemoRequestInput>(emptyForm);
+export default function OnboardingRequestForm() {
+  const [form, setForm] = useState<OnboardingRequestInput>(emptyForm);
   const [errors, setErrors] = useState<FieldErrors>({});
   const [status, setStatus] = useState<Status>("idle");
   const [honeypot, setHoneypot] = useState("");
@@ -68,19 +68,19 @@ export default function DemoRequestForm() {
     startedAt.current = Date.now();
   }, []);
 
-  const set = <K extends keyof DemoRequestInput>(key: K, value: DemoRequestInput[K]) =>
+  const set = <K extends keyof OnboardingRequestInput>(key: K, value: OnboardingRequestInput[K]) =>
     setForm((f) => ({ ...f, [key]: value }));
 
   const toggleDatabase = (db: string) =>
     set("databases", form.databases.includes(db) ? form.databases.filter((d) => d !== db) : [...form.databases, db]);
 
-  const describe = (key: keyof DemoRequestInput) => (errors[key] ? `${key}-error` : undefined);
+  const describe = (key: keyof OnboardingRequestInput) => (errors[key] ? `${key}-error` : undefined);
 
   async function onSubmit(e: SyntheticEvent<HTMLFormElement>) {
     e.preventDefault();
     if (status === "submitting") return;
 
-    const found = validateDemoRequest(form);
+    const found = validateOnboardingRequest(form);
     setErrors(found);
     const firstInvalid = Object.keys(found)[0];
     if (firstInvalid) {
@@ -92,14 +92,14 @@ export default function DemoRequestForm() {
 
     // `next dev` cannot run the PHP handler; simulate success locally.
     if (process.env.NODE_ENV !== "production") {
-      console.info("[demo request: dev only, not sent]", form);
+      console.info("[onboarding request: dev only, not sent]", form);
       await new Promise((r) => setTimeout(r, 600));
       setStatus("success");
       return;
     }
 
     try {
-      const res = await fetch(DEMO_ENDPOINT, {
+      const res = await fetch(ONBOARDING_ENDPOINT, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -127,7 +127,7 @@ export default function DemoRequestForm() {
         <CheckCircle2 size={36} className="text-accent-emerald" aria-hidden />
         <h2 className="text-2xl font-bold tracking-[-0.5px] text-primary">Thank you. We have your request.</h2>
         <p className="text-base leading-relaxed text-body">
-          Our team will reply by email to arrange your demo. If you do not hear from us, write to{" "}
+          Our team will reply by email to arrange your onboarding. If you do not hear from us, write to{" "}
           <a href={`mailto:${SALES_EMAIL}`} className="font-medium text-primary underline underline-offset-2">
             {SALES_EMAIL}
           </a>
@@ -288,7 +288,7 @@ export default function DemoRequestForm() {
             className="mt-1 size-4 shrink-0 accent-primary"
           />
           <span>
-            I agree that Datorix may use these details to contact me about my demo request, as described in the{" "}
+            I agree that Datorix may use these details to contact me about my onboarding request, as described in the{" "}
             <Link href="/privacy/" target="_blank" className="font-medium text-primary underline underline-offset-2">
               Privacy Policy
             </Link>
@@ -328,7 +328,7 @@ export default function DemoRequestForm() {
           </>
         ) : (
           <>
-            Request a demo
+            Get started
             <ArrowRight size={16} aria-hidden />
           </>
         )}

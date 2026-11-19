@@ -11,7 +11,7 @@ import {
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
-  description: "How Datorix collects, uses and protects the personal data you share when you request a demo.",
+  description: "How Datorix collects, uses and protects the personal data you share when you request onboarding.",
   alternates: { canonical: "/privacy/" },
 };
 
@@ -31,7 +31,7 @@ export default function PrivacyPage() {
       </p>
 
       <h2>What we collect</h2>
-      <p>When you submit the demo request form, you give us:</p>
+      <p>When you submit the onboarding request form, you give us:</p>
       <ul>
         <li>your full name, work email address, company and job title;</li>
         <li>optionally, the databases you use and a free-text message;</li>
@@ -49,7 +49,7 @@ export default function PrivacyPage() {
       <h2>Why we use it, and our basis</h2>
       <ul>
         <li>
-          <strong>To respond to your demo request</strong> and arrange the demo. Basis: your consent, given by ticking
+          <strong>To respond to your onboarding request</strong> and arrange your onboarding. Basis: your consent, given by ticking
           the box on the form, and our need to act on your request.
         </li>
         <li>
@@ -78,7 +78,7 @@ export default function PrivacyPage() {
 
       <h2>How long we keep it</h2>
       <p>
-        We keep a demo request for up to {RETENTION_MONTHS} months after you send it, then delete it. If you become a
+        We keep an onboarding request for up to {RETENTION_MONTHS} months after you send it, then delete it. If you become a
         customer, the details we hold for the contract are covered by our agreement with you and applicable law.
       </p>
 

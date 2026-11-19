@@ -95,7 +95,7 @@ export default function Navbar() {
         {/* CTA */}
         <div className="hidden lg:flex items-center gap-3">
           <Link
-            href="/request-demo/"
+            href="/onboarding/"
             className={cn(
               buttonVariants({ variant: "default" }),
               "inline-flex items-center h-10 px-5 rounded-md border-0 text-sm font-semibold bg-primary hover:bg-primary-active text-white transition-all duration-150 hover:-translate-y-0.5 hover:shadow-md active:scale-[0.98]"
@@ -149,7 +149,7 @@ export default function Navbar() {
           </div>
 
           <Link
-            href="/request-demo/"
+            href="/onboarding/"
             onClick={() => setOpen(false)}
             className="mt-3 flex items-center justify-center h-11 rounded-md text-sm font-semibold bg-primary hover:bg-primary-active text-white no-underline transition-all duration-150 active:scale-[0.98]"
           >

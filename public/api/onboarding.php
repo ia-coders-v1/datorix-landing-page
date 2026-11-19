@@ -1,13 +1,13 @@
 <?php
-// Demo request handler. Deployed to cPanel with the static site (see .github/workflows/deploy.yml).
+// Onboarding request handler. Deployed to cPanel with the static site (see .github/workflows/deploy.yml).
 // Emails the submission to the Sales inbox using the server's own mail transport (no password needed).
 // Nothing is stored in a database. Rate-limit data is a hashed IP in a temp file that expires in an hour.
-// Field rules mirror src/lib/demo-request.ts; keep them in step.
+// Field rules mirror src/lib/onboarding-request.ts; keep them in step.
 
 declare(strict_types=1);
 
 const MAIL_TO = 'sales@datorix.ai';
-const MAIL_FROM = 'demo@datorix.ai';
+const MAIL_FROM = 'info@datorix.ai';
 const ALLOWED_ORIGINS = ['https://datorix.ai', 'https://www.datorix.ai'];
 const DATABASE_OPTIONS = ['Oracle', 'MySQL', 'PostgreSQL', 'SQL Server', 'ClickHouse', 'Other'];
 const RATE_LIMIT = 5;          // submissions
@@ -42,7 +42,7 @@ function multiLine(mixed $value, int $max): string
 
 function rateLimited(string $ip): bool
 {
-    $file = sys_get_temp_dir() . '/datorix-demo-' . hash('sha256', $ip) . '.json';
+    $file = sys_get_temp_dir() . '/datorix-onboarding-' . hash('sha256', $ip) . '.json';
     $now = time();
     $fh = @fopen($file, 'c+');
     if ($fh === false) {
@@ -124,11 +124,11 @@ if (rateLimited($ip)) {
     respond(429, ['ok' => false]);
 }
 
-$subject = mb_encode_mimeheader("[Demo request] {$name}, {$company}", 'UTF-8', 'B', "\r\n");
+$subject = mb_encode_mimeheader("[Onboarding request] {$name}, {$company}", 'UTF-8', 'B', "\r\n");
 $replyName = mb_encode_mimeheader(str_replace(['"', '\\'], '', $name), 'UTF-8', 'B', "\r\n");
 
 $body = implode("\n", [
-    'New demo request from the Datorix website.',
+    'New onboarding request from the Datorix website.',
     '',
     "Name:       {$name}",
     "Email:      {$email}",
@@ -157,7 +157,7 @@ $headers = [
 
 $sent = mail(MAIL_TO, $subject, $body, $headers, '-f' . MAIL_FROM);
 if (!$sent) {
-    error_log('Datorix demo request: mail() failed');
+    error_log('Datorix onboarding request: mail() failed');
     respond(500, ['ok' => false]);
 }
 

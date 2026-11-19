@@ -245,7 +245,7 @@ Analytics run in your own Databricks workspace under your own access controls.
 
 One console for what your databases do, who touches them, where the data goes and what it tells you.
 
-**[Request a demo]**  **[Download the datasheet]**
+**[Get started]**  **[Download the datasheet]**
 
 ---
 

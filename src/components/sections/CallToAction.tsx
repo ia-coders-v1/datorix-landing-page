@@ -18,10 +18,10 @@ export default function CallToAction() {
 
           <div className="flex flex-col sm:flex-row gap-3 mt-2">
             <Link
-              href="/request-demo/"
+              href="/onboarding/"
               className="flex items-center justify-center gap-2 shrink-0 font-semibold h-11 px-6 rounded-md text-sm text-white bg-cta hover:bg-cta-hover no-underline transition-all duration-150 hover:-translate-y-0.5 hover:shadow-md active:scale-[0.98]"
             >
-              Request a demo
+              Get started
               <ArrowRight size={15} />
             </Link>
             <a

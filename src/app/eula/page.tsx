@@ -14,7 +14,7 @@ export default function EulaPage() {
       <p>
         This End User License Agreement (&quot;EULA&quot;) is between {LEGAL_NAME} (&quot;Datorix&quot;), {LEGAL_ADDRESS},
         and the organization or person that installs or uses the Datorix software (&quot;you&quot;). You accept this EULA
-        when you install the software, activate a trial, or otherwise start using it. Requesting a demo on our website
+        when you install the software, activate a trial, or otherwise start using it. Requesting onboarding on our website
         does not accept this EULA and does not give you a licence. If you do not agree, do not install or use the software.
       </p>
       <p>

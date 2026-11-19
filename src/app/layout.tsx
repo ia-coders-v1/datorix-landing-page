@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, JetBrains_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import {
   SITE_URL,
@@ -10,16 +10,17 @@ import {
   SITE_SAME_AS,
 } from "@/lib/site";
 
-const inter = Inter({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+// Self-hosted (latin subset) so the build never depends on Google Fonts being reachable.
+const inter = localFont({
+  src: "./fonts/Inter-latin-variable.woff2",
+  weight: "400 700",
   variable: "--font-inter",
   display: "swap",
 });
 
-const jetbrainsMono = JetBrains_Mono({
-  subsets: ["latin"],
-  weight: ["400"],
+const jetbrainsMono = localFont({
+  src: "./fonts/JetBrainsMono-latin-400.woff2",
+  weight: "400",
   variable: "--font-jetbrains-mono",
   display: "swap",
 });
